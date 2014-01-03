@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="co.uk.jmcapps.aafinder"
+<widget id="co.uk.website.aafinder"
     version="1.6.0"
     xmlns="http://www.w3.org/ns/widgets"
     xmlns:cdv="http://cordova.apache.org/ns/1.0"
@@ -13,9 +13,9 @@
         Find local Alcoholics Anonymous meetings.
     </description>
     <author 
-        email="callback-dev@incubator.apache.org" 
-        href="http://jmcmobile.co.uk">
-        JMCmobile web development
+        email="email@email.com" 
+        href="http://website.co.uk">
+        Author name insert
     </author>
 
     <!-- ICONS :  -->
