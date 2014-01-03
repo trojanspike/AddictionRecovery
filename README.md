@@ -1,4 +1,7 @@
 ## AA finder
+### Not complete
+
+#### users can fork / edit and see how it works with cordova
 ---
 Download & install from adobe [download](https://build.phonegap.com/apps/719314/share "Title").
 

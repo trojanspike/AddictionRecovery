@@ -26,28 +26,28 @@ AA.factory('appData', function($q, $location, $http, $timeout){
 			window.AAdata ={markers:_data, details:{}};
 			// if getItem() -> null : do # else - attach to AAdata
 				
-				if(window.localStorage.getItem('JMC-AA-app') === null){
+				if(window.localStorage.getItem('AA-app') === null){
 					PG.geo('current', function(pos){
 						window.AAdata.userData={homeGeo:{lat:pos.coords.latitude , long:pos.coords.longitude}, prev:[], near:[]};
-						window.localStorage.setItem('JMC-AA-app', JSON.stringify({userData:{homeGeo:{lat:pos.coords.latitude , long:pos.coords.longitude}, prev:[], near:[]}}));
+						window.localStorage.setItem('AA-app', JSON.stringify({userData:{homeGeo:{lat:pos.coords.latitude , long:pos.coords.longitude}, prev:[], near:[]}}));
 						_defer.resolve(window.AAdata);
 						$('#loader-modal').fadeOut(300);
 						$location.path('/welcome');
 					});
 				} else {
 					window.AAdata.userData=(function(){
-						var _obj = $.parseJSON(window.localStorage.getItem('JMC-AA-app'));
+						var _obj = $.parseJSON(window.localStorage.getItem('AA-app'));
 						return _obj.userData;
 					})();
 
 					_defer.resolve(window.AAdata);
 					$('#loader-modal').fadeOut(300);
 				}
-				//- _data = $.parseJSON(window.localStorage.getItem('JMC-AA-app'));
+				//- _data = $.parseJSON(window.localStorage.getItem('AA-app'));
 				
 			});
 		} else {
-			window.AAdata.userData=$.parseJSON(window.localStorage.getItem('JMC-AA-app'));
+			window.AAdata.userData=$.parseJSON(window.localStorage.getItem('AA-app'));
 			_defer.resolve(window.AAdata);
 			$('#loader-modal').fadeOut(300);
 		}
