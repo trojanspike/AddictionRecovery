@@ -19,10 +19,10 @@
     </author>
 
     <!-- ICONS :  -->
-    <icon height="191" src="res/icon/AAicon.png" width="191" />
+    <icon height="96" src="res/icon/AAicon.png" width="96" />
     <icon cdv:platform="android" height="96" src="res/icon/AAicon.png" width="96" />
-    <icon cdv:platform="blackberry" height="80" src="res/icon/AAicon.png" width="80" />
-    <icon cdv:platform="ios" height="144" src="res/icon/AAicon.png" width="144" />
+    <icon cdv:platform="blackberry" height="96" src="res/icon/AAicon.png" width="96" />
+    <icon cdv:platform="ios" height="96" src="res/icon/AAicon.png" width="96" />
 
 
     <!-- SPLASH : android -->
