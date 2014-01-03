@@ -1,0 +1,26 @@
+
+      <li>
+       <div id="search-input" class="hide">
+         <input
+            type="search"
+            ng-model="locationFilter"
+            placeholder="Location search"
+            x-webkit-speech=""
+            speech=""
+            autocomplete="off">
+       </div>
+
+      </li>
+
+  <div id="search-scroller">
+     <ul class="nav nav-tabs nav-stacked">
+       <li ng-repeat="place in places | filter:locationFilter ">
+        <a ng-click="locationClick();" href="#/location/{{ place | lowercase }}">{{ place }}
+          <span class="pull-right icon-chevron-right"></span>
+        </a>
+      </li>
+     </ul>
+  </div>  
+      
+      <li id="search-load"><a href="/">Loading ...</a></li>
+    
