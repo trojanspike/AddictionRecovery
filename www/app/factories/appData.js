@@ -47,9 +47,9 @@ AA.factory('appData', function($q, $location, $http, $timeout){
 				
 			});
 		} else {
-			window.AAdata.userData=$.parseJSON(window.localStorage.getItem('AA-app'));
-			_defer.resolve(window.AAdata);
-			$('#loader-modal').fadeOut(300);
+            window.AAdata.userData=$.parseJSON(window.localStorage.getItem('AA-app'));
+            _defer.resolve(window.AAdata);
+            $('#loader-modal').fadeOut(300);
 		}
 	})();
 

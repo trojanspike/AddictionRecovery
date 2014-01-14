@@ -48,7 +48,7 @@ AA.directive('searchWidget', function(appData){
                 $scope.places = data;
                 $('#search-load').remove();
 
-                setTimeout( function(){new iScroll('search-scroller');} ,1200);
+                setTimeout( function(){new iScroll('search-scroller');} ,0);
             });
             $scope.locationClick = function(){
                 $('#search-tab').toggleClass('active');

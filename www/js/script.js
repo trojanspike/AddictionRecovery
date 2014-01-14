@@ -1,10 +1,7 @@
 (function($){
-$('a[href="#/search"]').click(function(){
-	$('#loader #modal-feedback').html('<p>Loading search data ...  </p>');
-});
 
 $('a[href="#/exit"]').click(function(event){
-	//- navigator.app.exitApp();
+	navigator.app.exitApp();
 	event.isPropagationStopped();
 	return false;
 });

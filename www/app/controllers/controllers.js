@@ -19,8 +19,9 @@ function Scroller(){
     }
 }
 /* home  ############################ */
-AA.controller('homeCtrl', function($scope, appData){
-
+AA.controller('homeCtrl', function($scope, homeFactory){
+    $scope.near = {name:'hello', url:'world'};
+    $scope.prev = [];
     $('#main-bottom-nav').removeClass('hide');
     Scroller();
 });
