@@ -71,4 +71,5 @@
 
     <!-- access origins : specify -->
     <access subdomains="false" uri="http://www.alcoholicsanonymous.ie/" />
+    <access subdomains="true" uri="google.com" />
 </widget>
