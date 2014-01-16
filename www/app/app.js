@@ -106,4 +106,15 @@ PG.init(function(){
     PG.evt('searchbutton', function(){
         $('#search-tab').toggleClass('in-active', 'active');
     });
+
+    $('a[href="#/exit"]').on('click', function(event){
+        PG.notify.confirm('Are you sure you want to exit?',
+        function(){
+            // confirmed : yes
+            navigator.app.exitApp();
+        }, "Exit");
+        event.isPropagationStopped();
+        return false;
+    });
+
 });
