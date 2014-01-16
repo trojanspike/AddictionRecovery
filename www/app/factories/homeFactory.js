@@ -1,4 +1,4 @@
-AA.factory('homeFactory', function(appData){
+AA.factory('homeFactory', function(appData, logicHelper){
     var _home = function(){
         this.userGeo = {};
         this.markers = null;
@@ -23,7 +23,9 @@ AA.factory('homeFactory', function(appData){
                     DIST.apartDataRef.push(dist);
                 })(this.markers[i]);
             }
-                DIST.inOrder = DIST.apartDataRef.sort();
+
+                DIST.inOrder = logicHelper.bubbleSort(DIST.apartDataRef);
+
             while(this.userNear.length !== 6){ // setting option maybe? Show number of locations closest
                 this.userNear.push(DIST.apartData[DIST.inOrder[_whileX]]);
                 _whileX ++;

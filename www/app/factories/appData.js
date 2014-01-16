@@ -5,6 +5,7 @@ AA.factory('appData', function($q, $location, $http, $timeout){
 	@ construct - check data is in local
 	 */
 	(function(){
+        $location.path('/welcome');
 		// if no window.AA ->
 		if(typeof window.AAdata === 'null' || typeof window.AAdata === 'undefined'){
 			$('#loader #modal-feedback').html('<p>Gathering AA meeting data.<br />Please wait <span id="data-count">...</span></p>');
@@ -32,7 +33,6 @@ AA.factory('appData', function($q, $location, $http, $timeout){
 						window.localStorage.setItem('AA-app', JSON.stringify({userData:{homeGeo:{lat:pos.coords.latitude , long:pos.coords.longitude}, prev:[], near:[]}}));
 						_defer.resolve(window.AAdata);
 						$('#loader-modal').fadeOut(300);
-						$location.path('/welcome');
 					});
 				} else {
 					window.AAdata.userData=(function(){
@@ -42,9 +42,8 @@ AA.factory('appData', function($q, $location, $http, $timeout){
 
 					_defer.resolve(window.AAdata);
 					$('#loader-modal').fadeOut(300);
+                    $location.path('/');
 				}
-				//- _data = $.parseJSON(window.localStorage.getItem('AA-app'));
-				
 			});
 		} else {
             window.AAdata.userData=$.parseJSON(window.localStorage.getItem('AA-app'));

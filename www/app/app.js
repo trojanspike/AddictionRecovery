@@ -69,6 +69,7 @@ AA.config(function($routeProvider){
         })
         .when('/welcome',
         {
+            animation: 'page-slide',
             controller:'welcomeCtrl',
             templateUrl:'app/partials/welcome.html'
         })
