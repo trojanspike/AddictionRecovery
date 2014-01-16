@@ -13,17 +13,22 @@ function Scroller(){
                 hScrollbar : false,
                 zoom : true
             });
-        } , 700);
+        } , 0);
     } else {
         myScroll = new iScroll('wrapper', { checkDOMChanges: true });
     }
 }
 /* home  ############################ */
-AA.controller('homeCtrl', function($scope, homeFactory){
-    $scope.near = {name:'hello', url:'world'};
-    $scope.prev = [];
-    $('#main-bottom-nav').removeClass('hide');
-    Scroller();
+AA.controller('homeCtrl', function($scope,appData, homeFactory){
+    appData.get().then(function(data){
+
+        homeFactory.nearestHomeGeo(data.userData.homeGeo, data.markers, data.userData.near, function(nearest){
+            $scope.nearest = nearest;
+            $('#loader').fadeOut(300);
+            Scroller();
+        });
+        $scope.prevous = data.userData.prev;
+    });
 });
 /* welcome  ############################ */
 AA.controller('welcomeCtrl', function($scope){
@@ -51,7 +56,7 @@ AA.controller('locationCtrl', function($scope, $routeParams, appData){
     Scroller();
 });
 /* place specific  ############################ */
-AA.controller('placeCtrl', function($scope, $routeParams, appData){
+AA.controller('placeCtrl', function($scope, $routeParams, appData, homeFactory){
     appData.get('place'+$routeParams.code).then(function(data){
        $scope.details = data;
     }).then(function(){
@@ -59,6 +64,7 @@ AA.controller('placeCtrl', function($scope, $routeParams, appData){
             $.each(data.markers, function(key, val){
                 if(val.code === $routeParams.code.substr(1)){
                     $scope.marker = data.markers[key];
+                    homeFactory.setPrev(data.markers[key]);
                 }
             });
         });

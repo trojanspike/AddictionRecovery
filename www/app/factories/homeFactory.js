@@ -1,13 +1,65 @@
-AA.factory('homeFactory', function($q, $location, $http, $timeout, appData){
-    // use addpData userData.homeGeo for centre point to get surrounding nearest
-    appData.get().then(function(data){
-            var _placeSortObj = {}, i = 0, _nearest = [];
-            if(data.userData.near.length !== 6){
-                /***********/
-
-                /**********/
-            } else {
-                $scope.nearest = data.userData.near;
+AA.factory('homeFactory', function(appData){
+    var _home = function(){
+        this.userGeo = {};
+        this.markers = null;
+        this.userNear = [];
+    };
+    _home.prototype.getNear = function(callback){
+        if(this.userNear.length !== 6){
+            $('#loader #modal-feedback').html('<p>Computing data.<br />Please wait</p>');
+            // let do some computing
+            var DIST = {
+                    apartData : {},
+                    apartDataRef : [],
+                    inOrder : []
+                }, i = 0, to, dist, _whileX = 0,
+                from = new google.maps.LatLng(parseInt(this.userGeo.lat), parseInt(this.userGeo.long));
+            /************************************/
+            for(i; i < this.markers.length; i++){
+                (function(marker){
+                    to = new google.maps.LatLng(marker.location.lat, marker.location.long);
+                    dist = google.maps.geometry.spherical.computeDistanceBetween(from, to);
+                    DIST.apartData[dist]=marker;
+                    DIST.apartDataRef.push(dist);
+                })(this.markers[i]);
             }
-        });
+                DIST.inOrder = DIST.apartDataRef.sort();
+            while(this.userNear.length !== 6){ // setting option maybe? Show number of locations closest
+                this.userNear.push(DIST.apartData[DIST.inOrder[_whileX]]);
+                _whileX ++;
+            }
+            window.AAdata.userData.near = this.userNear;
+            window.localStorage.setItem('AA-app', JSON.stringify({userData:window.AAdata.userData}));
+            callback(this.userNear);
+            /***/
+        } else {
+            callback(this.userNear);
+        }
+    };
+
+
+    return {
+        nearestHomeGeo : function(homeGeo, markers, near, callback){
+            var Home = new _home();
+            Home.userGeo = homeGeo;
+            Home.markers = markers;
+            Home.userNear = near;
+            Home.getNear(callback);
+        }
+        , setPrev : function(newPrev){
+            var _save = function(){
+                window.localStorage.setItem('AA-app', JSON.stringify({userData:window.AAdata.userData}));
+            };
+            if(window.AAdata.userData.prev.length === 6){
+                // we have 6 already , lets remove the first one
+                window.AAdata.userData.prev.shift();
+                window.AAdata.userData.prev.push(newPrev);
+                _save();
+            } else {
+                // ok , just add new
+                window.AAdata.userData.prev.push(newPrev);
+                _save();
+            }
+        }
+    };
 });
