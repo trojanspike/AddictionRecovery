@@ -107,16 +107,4 @@ PG.init(function(){
         $('#search-tab').toggleClass('in-active', 'active');
     });
 
-    $('a[href="#/exit"]').click( function(event){
-        /* navigator.notification.confirm('Are you sure you want to exit?',
-        function(){
-            // confirmed : yes
-            // navigator.app.exitApp();
-        }, "Exit"); */
-        PG.notify.vibrate(1200);
-        navigator.app.exitApp();
-        event.isPropagationStopped();
-        return false;
-    });
-
 });
