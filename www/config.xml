@@ -72,4 +72,5 @@
     <!-- access origins : specify -->
     <access subdomains="false" uri="http://www.alcoholicsanonymous.ie/" />
     <access subdomains="true" uri="https://googleapis" />
+    <access subdomains="true" uri="http://phonegap.com" />
 </widget>
