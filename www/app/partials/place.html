@@ -3,13 +3,19 @@
         <h3><span>{{ marker.name }}</span></h3>
     </header>
     <section>
-        <div class="ui-section">
+        <div class="ui-section meeting">
             <ul class="nav nav-pills nav-stacked">
                 <li class="active"><a href="">Details </a> </li>
 
                 <li>
                     <ul id="days-times" class="nav unstyled">
-                        <li ng-repeat="(key, value) in details.days">{{ key }} : <span class="label label-info pull-right">{{value}}</span></li>
+                        <li>Monday : <span class="label label-info pull-right">{{details.days.mon}}</span></li>
+                        <li>Tuesday : <span class="label label-info pull-right">{{details.days.tues}}</span></li>
+                        <li>Wednesday : <span class="label label-info pull-right">{{details.days.wed}}</span></li>
+                        <li>Thrusday : <span class="label label-info pull-right">{{details.days.thu}}</span></li>
+                        <li>Friday : <span class="label label-info pull-right">{{details.days.fri}}</span></li>
+                        <li>Saturday : <span class="label label-info pull-right">{{details.days.sat}}</span></li>
+                        <li>Sunday : <span class="label label-info pull-right">{{details.days.sun}}</span></li>
                     </ul>
                 </li>
 
