@@ -44,7 +44,7 @@ AA.controller('infoCtrl', function($scope){
 });
 /* settings ############################  */
 AA.controller('settingsCtrl', function($scope){
-    $scope.go = function(){alert();}
+    $scope.go = function(){}
     Scroller();
 });
 /* location  ############################ */
