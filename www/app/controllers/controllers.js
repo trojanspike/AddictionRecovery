@@ -31,7 +31,7 @@ AA.controller('homeCtrl', function($scope,appData, homeFactory){
     });
 });
 /* welcome  ############################ */
-AA.controller('welcomeCtrl', function(){
+AA.controller('welcomeCtrl', function($scope){
     Scroller();
 });
 /* info */
@@ -44,7 +44,7 @@ AA.controller('infoCtrl', function($scope){
 });
 /* settings ############################  */
 AA.controller('settingsCtrl', function($scope){
-    $scope.go = function(){};
+    $scope.go = function(){alert();}
     Scroller();
 });
 /* location  ############################ */
