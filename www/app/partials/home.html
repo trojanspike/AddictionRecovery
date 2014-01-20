@@ -5,7 +5,7 @@
     <section>
         <div class="ui-section">
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="">Previous<span class="pull-right icon-chevron-left"></span></a> </li>
+                <li class="active"><a href="">Previous viewd meetings</a> </li>
                 <li ng-repeat="prev in prevous"><a href="#/place/:{{ prev.code }}">{{ prev.name }}<span class="pull-right icon-chevron-right"></span></a></li>
             </ul>
         </div>
@@ -13,7 +13,7 @@
 
         <div class="ui-section">
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="">Nearest<span class="pull-right icon-chevron-left"></span></a> </li>
+                <li class="active"><a href="">Nearest to your home location</a> </li>
                 <li ng-repeat="near in nearest"><a href="#/place/:{{ near.code }}">{{ near.name }}<span class="pull-right icon-chevron-right"></span></a></li>
             </ul>
         </div>

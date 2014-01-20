@@ -2,7 +2,6 @@ AA.factory('logicHelper' , function(){
 return {
   // because sometime .sort() doesnt cut it for numbers
 	bubbleSort : function(a){
-
 		var swapped;
 		    do {
 			swapped = false;

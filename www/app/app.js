@@ -37,6 +37,7 @@ Start angular routes
  */
 var AA = angular.module('AAapp', []);
 
+
 AA.directive('searchWidget', function(appData){
   
     return {
@@ -44,11 +45,14 @@ AA.directive('searchWidget', function(appData){
         replace:false,
         templateUrl:'app/directives/search.html',
         controller: ['$scope', '$element', '$attrs', '$transclude', function($scope, $element, $attrs, $transclude) {
+            $('#loader #modal-feedback').html('<p>Computing data.<br />Please wait</p>');
+            $('#loader-modal').fadeIn(300);
             appData.get('search').then(function(data){
                 $scope.places = data;
                 $('#search-load').remove();
 
                 setTimeout( function(){new iScroll('search-scroller');} ,0);
+                $('#loader-modal').fadeOut(300);
             });
             $scope.locationClick = function(){
                 $('#search-tab').toggleClass('active');

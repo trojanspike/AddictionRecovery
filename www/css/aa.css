@@ -54,13 +54,15 @@ body {
   font-size: 1em;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8), 2px 1px 2px rgba(0, 0, 0, 0.8), 3px 2px 2px rgba(0, 0, 0, 0.8);
 }
+
+/* BOTTOM NAV */
 #bottom-nav {
   width: 100%;
   margin: auto;
   background: #eaeaea;
   z-index: 10;
   position: fixed;
-  bottom: 0;
+  bottom: -2px;
   -webkit-box-shadow: 0px -1px 7px -2px #333333;
   -moz-box-shadow: 0px -1px 7px -2px #333333;
   box-shadow: 0px -1px 7px -2px #333333;
@@ -82,12 +84,15 @@ body {
 }
 #bottom-nav li a {
   text-align: center;
+  display:block;
   text-shadow: 0 0 0 #fff;
   color: #FFF;
 }
 #bottom-nav.in-active {
   bottom: -20%;
 }
+
+/* modal window */
 #loader-modal {
   position: fixed;
   width: 100%;
@@ -181,9 +186,16 @@ body {
 }
 #search-scroller ul li {
   margin: 1px 0 1px 0;
+  padding:5px 0 5px 0;
+  -webkit-box-shadow:0px 3px 8px -3px #999;
+  -moz-box-shadow:0px 3px 8px -3px #999;
+  -o-box-shadow:0px 3px 8px -3px #999;
+    -ms-box-shadow:0px 3px 8px -3px #999;
+    box-shadow:0px 3px 8px -3px #999;
 }
 #search-scroller ul li a {
   color: #000;
+    font-size:1.4em;
 }
 #top-nav {
   z-index: 10;
@@ -266,6 +278,7 @@ body {
   -moz-box-shadow: 0px 4px 10px -3px #000000;
   box-shadow: 0px 4px 10px -3px #000000;
   background: rgba(255, 255, 255, 0.7);
+  font-size:1.1em;
 }
 .user-display .ui-section li a {
   color: #000;
@@ -288,17 +301,82 @@ body {
 #welcome h5 {
   text-align: center;
 }
-#welcome .ui-section ul li {
+
+/* GLOABAL UI */
+.ui-section ul li:not(first-child) {
   background: #eaeaea;
-  margin: 1px 0 1px 0;
+  padding: 4px 0 4px 0;
   -webkit-box-shadow: 0 0 2px 0 #000000;
   -moz-box-shadow: 0 0 2px 0 #000000;
-  box-shadow: 0 0 2px 0 #000000;
+    -o-box-shadow: 0 0 2px 0 #000000;
+    -ms-box-shadow: 0 0 2px 0 #000000;
+  box-shadow: 0 0 6px -2px #000000;
   text-indent: 5px;
 }
-#welcome .ui-section ul p {
+.ui-section ul li.active a span {
+    background:#000;
+}
+
+.ui-section ul p {
   background: #eaeaea;
   text-indent: 5px;
+    padding: 3px;
+}
+.ui-section ul li:first-child {
+    padding: 0px 0 0px 0;
+}
+
+
+/* MEETING PAGE */
+.ui-section.meeting {
+    padding:0px 3px 0px 3px;
+    -webkit-box-sizing:border-box;
+    -mox-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    box-sizing:border-box;
+}
+.ui-section.meeting ul li:not(first-child) {
+    padding:0px; margin:0px;
+}
+.ui-section.meeting ul#days-times li {
+    -webkit-box-shadow: 0 0 0 0 #000000;
+    -moz-box-shadow: 0 0 0 0 #000000;
+    -o-box-shadow: 0 0 0 0 #000000;
+    -ms-box-shadow: 0 0 0 0 #000000;
+    box-shadow: 0 0 0 0 #000000;
+    text-indent: 5px;
+    padding:2px 8px 2px 5px;
+    margin:2px 0px 2px 0px;
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(246,246,246,1)), color-stop(100%,rgba(237,237,237,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
+}
+.ui-section.meeting ul li#mapImage {
+    position:relative;
+    width:96%;
+    padding:0px 3px 0px 3px;
+}
+.ui-section.meeting ul li#mapImage img {
+    -webkit-box-shadow:0px 0px 7px 3px #000;
+    -moz-box-shadow:0px 0px 7px 3px #000;
+    -ms-box-shadow:0px 0px 7px 3px #000;
+    -o-box-shadow:0px 0px 7px 3px #000;
+    box-shadow:0px 0px 7px 3px #000;
+}
+.ui-section.meeting p {
+    font-size: 1.1em;
+    margin:8px 0 5px 0;
+}
+
+.ui-section.meeting a {
+    margin:3px 0px 5px 8px;
+
 }
 /******************/
 /* responsive  */

@@ -9,7 +9,8 @@ AA.factory('appData', function($q, $location, $http, $timeout){
 		// if no window.AA ->
 		if(typeof window.AAdata === 'null' || typeof window.AAdata === 'undefined'){
 			$('#loader #modal-feedback').html('<p>Gathering AA meeting data.<br />Please wait <span id="data-count">...</span></p>');
-			$http({
+            $('#loader-modal').fadeIn(300);
+            $http({
 				method:'GET',
 				url:_dataUrl+'markers.do?county=any&day=any'
 			}).then(function(data, status, headers, config){

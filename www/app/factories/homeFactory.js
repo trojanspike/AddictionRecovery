@@ -7,13 +7,14 @@ AA.factory('homeFactory', function(appData, logicHelper){
     _home.prototype.getNear = function(callback){
         if(this.userNear.length !== 6){
             $('#loader #modal-feedback').html('<p>Computing data.<br />Please wait</p>');
+            $('#loader-modal').fadeIn(300);
             // let do some computing
             var DIST = {
                     apartData : {},
                     apartDataRef : [],
                     inOrder : []
                 }, i = 0, to, dist, _whileX = 0,
-                from = new google.maps.LatLng(parseInt(this.userGeo.lat), parseInt(this.userGeo.long));
+                from = new google.maps.LatLng(parseFloat(this.userGeo.lat), parseFloat(this.userGeo.long));
             /************************************/
             for(i; i < this.markers.length; i++){
                 (function(marker){

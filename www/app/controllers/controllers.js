@@ -24,24 +24,27 @@ AA.controller('homeCtrl', function($scope,appData, homeFactory){
 
         homeFactory.nearestHomeGeo(data.userData.homeGeo, data.markers, data.userData.near, function(nearest){
             $scope.nearest = nearest;
-            $('#loader').fadeOut(300);
+            $('#loader-modal').fadeOut(300);
             Scroller();
         });
         $scope.prevous = data.userData.prev;
     });
 });
 /* welcome  ############################ */
-AA.controller('welcomeCtrl', function($scope){
-
-    $('#main-bottom-nav').removeClass('hide');
+AA.controller('welcomeCtrl', function(){
     Scroller();
 });
 /* info */
 AA.controller('infoCtrl', function($scope){
+    $scope.version = '1.6.0';
+    $scope.build = '22/01/2014';
+    $scope.developer = 'Lee Mc Kay';
+    $scope.website = 'www.sites-ignite.co.uk';
     Scroller();
 });
 /* settings ############################  */
 AA.controller('settingsCtrl', function($scope){
+    $scope.go = function(){};
     Scroller();
 });
 /* location  ############################ */
@@ -52,7 +55,6 @@ AA.controller('locationCtrl', function($scope, $routeParams, appData){
         $scope.count = data.count;
         $scope.locationPlaces = data.places;
     });
-    $('#main-bottom-nav').removeClass('hide');
     Scroller();
 });
 /* place specific  ############################ */
@@ -69,6 +71,5 @@ AA.controller('placeCtrl', function($scope, $routeParams, appData, homeFactory){
             });
         });
     });
-    $('#main-bottom-nav').removeClass('hide');
     Scroller();
 });
