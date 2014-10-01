@@ -20,7 +20,7 @@
 
     <!-- ICONS :  -->
     <icon height="96" src="res/icon/AAicon.png" width="96" />
-    <icon cdv:platform="android" height="96" src="res/icon/AAicon.png">
+    <!-- <icon cdv:platform="android" height="96" src="res/icon/AAicon.png" /> -->
 
     <!-- features -->
     <feature name="http://api.phonegap.com/1.0/device" />
