@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget 
+	id="uk.co.sites-ignite.AAfinderApp" 
+	version="0.0.1" xmlns="http://www.w3.org/ns/widgets" 
+	xmlns:cdv="http://cordova.apache.org/ns/1.0"
+>
+    <name>AA finder</name>
+
+
+    <description>
+		Find local Alcoholics Anonymous meetings.
+    </description>
+
+
+    <author
+        email="contact@sites-ignite.co.uk"
+        href="http://sites-ignite.co.uk">
+        Lee Mc Kay
+    </author>
+
+    <!-- ICONS :  -->
+    <icon height="96" src="res/icon/AAicon.png" width="96" />
+    <icon cdv:platform="android" height="96" src="res/icon/AAicon.png">
+
+    <!-- features -->
+    <feature name="http://api.phonegap.com/1.0/device" />
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    <feature name="http://api.phonegap.com/1.0/notification"/>
+
+    <!-- PERFENCES : set orientation etc -->
+    <preference name="phonegap-version" value="2.9.0" />
+    <preference name="orientation" value="portrait" />
+    <preference name="exit-on-suspend" value="true" />
+    <preference name="target-device" value="handset" />
+    <preference name="fullscreen" value="false" />
+
+    <!-- access origins : specify -->
+    <access subdomains="false" uri="http://www.alcoholicsanonymous.ie/" />
+    <access subdomains="true" uri="https://googleapis" />
+    <access subdomains="true" uri="http://192.168.1.2" />
+
+    <content src="index.html" />
+</widget>
