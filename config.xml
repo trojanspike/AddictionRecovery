@@ -36,9 +36,11 @@
     <preference name="fullscreen" value="false" />
 
     <!-- access origins : specify -->
-    <access subdomains="false" uri="http://www.alcoholicsanonymous.ie/" />
-    <access subdomains="true" uri="https://googleapis" />
-    <access subdomains="true" uri="http://192.168.1.2" />
+    <access subdomains="false" origin="http://www.alcoholicsanonymous.ie/" />
+    <access subdomains="true" origin="https://googleapis" />
+    <access subdomains="true" origin="http://192.168.1.3" />
+
+	<!-- <access origin="*"/> -->
 
     <content src="index.html" />
 </widget>

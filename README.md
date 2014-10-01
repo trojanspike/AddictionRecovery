@@ -12,3 +12,7 @@ Download & install from adobe [download](https://build.phonegap.com/apps/719314/
 ![Settings](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/settings.png)
 ![Time-infi-map](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/times-info-map.png)
 ---
+
+Plugin search url :
+--------------------
+http://plugins.cordova.io/#/
