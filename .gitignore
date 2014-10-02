@@ -10,5 +10,5 @@ platforms/*
 plugins/*
 !plugins/git.index
 
-apl/*
+apk/*
 !apk/git.index
