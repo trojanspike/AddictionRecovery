@@ -5,25 +5,32 @@
     <title>AA finder</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+	 <link rel="stylesheet" href="bower_components/onsenui/build/css/onsenui.css">
+	 <link rel="stylesheet" href="bower_components/onsenui/build/css/onsen-css-components.css">
     <!-- endbuild -->
   </head>
-  <body>
+  <body ng-app="aaFinder">
+		
+		<ons-page var="myPage">
 
-	@@
-
+			<ng-view></ng-view>			
+		
+		</ons-page>
+		
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/onsenui/build/js/onsenui.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/cordovaCache/dist/crypto-aes.js"></script>
+    <script src="bower_components/cordovaCache/dist/cordovaCache.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -37,8 +44,13 @@
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
 
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
+        <!-- build:js({app,.tmp}) scripts/App.js -->
+			<script type="text/javascript" src="scripts/start.js"></script>
+        	<script type="text/javascript" src="scripts/routes.js"></script>
+			<script type="text/javascript" src="scripts/constants/settings.js"></script>
+			<script type="text/javascript" src="scripts/factories/appData.js"></script>
+
+			<script type="text/javascript" src="scripts/controllers/index.js"></script>
         <!-- endbuild -->
 </body>
 </html>

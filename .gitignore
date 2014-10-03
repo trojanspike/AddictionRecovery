@@ -17,3 +17,5 @@ plugins/*
 
 apk/*
 !apk/git.index
+
+X_www
