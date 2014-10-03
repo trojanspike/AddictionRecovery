@@ -305,6 +305,13 @@ module.exports = function (grunt) {
         cwd: '<%= config.app %>/templates',
         dest: '<%= config.dist %>/templates',
         src: '*/**/*.html'
+      },
+      onsenui: {
+        expand: true,
+        dot: true,
+        cwd: 'bower_components/onsenui/build/css/',
+        dest: '<%= config.dist %>/styles/css/',
+        src: '{**/*,*/}*.*'
       }
     },
 
@@ -319,6 +326,7 @@ module.exports = function (grunt) {
       dist: [
         'copy:styles',
         'copy:templates',
+        'copy:onsenui',
         'imagemin',
         'svgmin'
       ]
@@ -343,6 +351,7 @@ module.exports = function (grunt) {
       'watch'
     ]);
   });
+
 
   grunt.registerTask('server', function (target) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');

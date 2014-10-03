@@ -6,8 +6,6 @@ bower_components
 .idea/
 style_edit/
 
-hooks/*
-!hooks/git.index
 
 platforms/*
 !platforms/git.index
