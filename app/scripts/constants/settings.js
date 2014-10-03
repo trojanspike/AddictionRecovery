@@ -1,4 +1,4 @@
-angular.module('app.constants'[])
+angular.module('app.constants',[])
 .constant('apiInfo', {
 /* url-main, markers, details */
 	
