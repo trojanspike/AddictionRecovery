@@ -298,6 +298,13 @@ module.exports = function (grunt) {
         cwd: '<%= config.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      templates: {
+        expand: true,
+        dot: true,
+        cwd: '<%= config.app %>/templates',
+        dest: '<%= config.dist %>/templates',
+        src: '*/**/*.html'
       }
     },
 
@@ -311,6 +318,7 @@ module.exports = function (grunt) {
       ],
       dist: [
         'copy:styles',
+        'copy:templates',
         'imagemin',
         'svgmin'
       ]
