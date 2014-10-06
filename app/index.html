@@ -10,22 +10,72 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+	<script src="http://192.168.1.3:8080/target/target-script-min.js#anonymous"></script>
 
 	 <link rel="stylesheet" href="bower_components/onsenui/build/css/onsenui.css">
 	 <link rel="stylesheet" href="bower_components/onsenui/build/css/onsen-css-components.css">
 
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/locationplace.css">
+    <link rel="stylesheet" href="styles/ons-list.css">
     <!-- endbuild -->
   </head>
   <body ng-app="aaFinder">
-		
-		<ons-page var="myPage">
 
-			<ng-view></ng-view>			
-		
-		</ons-page>
-		
+  <!--############-->
+  <ons-sliding-menu
+          above-page="main.html"
+          behind-page="templates/sideView/menu.html"
+          side="left"
+          max-slide-distance="250px"
+          var="menu">
+  </ons-sliding-menu>
+
+  <ons-template id="main.html">
+      <ons-page>
+          <ons-toolbar>
+              <div class="left">
+                  <a  ng-click="menu.toggleMenu()">
+                      <ons-icon icon="ion-search" style="font-size: 32px; width: 1em;"></ons-icon>
+                  </a>
+              </div>
+              <div class="center">
+                  <a href="#/welcome">
+                      AA Finder
+                  </a>
+              </div>
+              <div class="right">
+                  <a href="#/">
+                      <ons-icon icon="ion-home"></ons-icon>
+                  </a>
+              </div>
+          </ons-toolbar>
+
+            <ng-view></ng-view>
+
+          <ons-bottom-toolbar>
+              <ons-row>
+                  <ons-col>
+                      <app-exit>
+                          <a> Exit </a>
+                      </app-exit>
+                  </ons-col>
+                  <ons-col>
+                      <a href="#/info">Info</a>
+                  </ons-col>
+                  <ons-col>
+                      <a href="#/settings">Settings</a>
+                  </ons-col>
+              </ons-row>
+          </ons-bottom-toolbar>
+
+      </ons-page>
+  </ons-template>
+
+  <!--############-->
+
+
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -46,7 +96,7 @@
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
-
+		<script src="cordova.js"></script>
         <!-- build:js({app,.tmp}) scripts/App.js -->
 			<script type="text/javascript" src="scripts/start.js"></script>
         	<script type="text/javascript" src="scripts/routes.js"></script>

@@ -1,0 +1,41 @@
+#place .location-details li {
+    list-style:none;
+    padding:0px; margin:0px;
+}
+
+#place .location-details li span.notification {
+    background:#549ff5;
+    color:#FFF;
+    font-weight:800;
+}
+
+#place #map {
+    width:100%;
+    max-width:600px;
+    margin:auto;
+}
+
+#place #map img {
+    position:relative;
+    width:100%;
+}
+
+#place #description {
+    text-index:4px;
+    padding: 10px 0 0 10px;
+}
+
+#place #google-map-link {
+    text-decoration: none;
+    width:100%;
+    margin-top:8px;
+    padding:6px 0 6px 0;
+    display:block;
+    text-align:center;
+    color:#000;
+    background:#dcdbdd;
+}
+
+#place {
+    padding-bottom:35px;
+}

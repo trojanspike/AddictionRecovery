@@ -1,9 +1,5 @@
 #!/usr/bin/env node
 
-var methods = require('../methodsShare');
-
-/* DO A GRUNT BUILD FIRST */
-
 var fs = require('fs'), path = require('path');
 /* bower_components/onsenui/build/css/onsenui.css
 	= styles/css/onsenui.css
@@ -28,7 +24,3 @@ content = content.replace('bower_components/onsenui/build/css/onsenui.css', 'sty
 content = content.replace('bower_components/onsenui/build/css/onsen-css-components.css', 'styles/css/onsen-css-components.css');
 
 fs.writeFileSync(Location+'index.html', content, {encoding:'utf8'});
-
-
-/* Config changes app wide */
-var Config = require('../../config.js');
