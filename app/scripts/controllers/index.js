@@ -7,6 +7,9 @@ window.angular.module('app.controllers',[])
 
 }])
 .controller('welcomeCtrl', ['appService', function(appService){
+        /* Check if online -> network , else alert network
+         connect needed -> exit on ok
+         , else continue*/
         appService.ready(function(){
             window.modal.hide();
         });
