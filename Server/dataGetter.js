@@ -3,6 +3,9 @@ var request = require('request'),
     eyes = require('eyes'),
     xml2js = require('xml2js');
 var parser = new xml2js.Parser();
+
+var GetCodes, CompleteMove;
+
 parser.on('end', function(result) {
     // eyes.inspect(result);
     fs.writeFile(__dirname + '/data_request/markers.json', JSON.stringify( result ) ,'utf8', function(){
@@ -10,7 +13,6 @@ parser.on('end', function(result) {
     });
 });
 
-var GetCodes, CompleteMove;
 
 module.exports.run = function(){
     request('http://www.alcoholicsanonymous.ie/markers.do?county=any&day=any', function(error, response, body){
