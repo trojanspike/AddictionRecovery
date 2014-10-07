@@ -1,26 +1,23 @@
 'use strict';
-window.AA = window.AA || {};
 var ons = window.ons;
-window.angular.module('aaFinder',['app.routes','onsen', 'SI.cordova']).run(['$location',
-function($location){
-
+var isDevice = true;
+window.angular.module('aaFinder',['app.routes','onsen', 'SI.cordova', 'app.data']).run(['$location','cordovaCache','appService',
+function($location, cordovaCache, appService){
+    $location.path('/welcome');
 ons.ready(function(){
-	// model.show();
-	/* Dev webview first - then mobile logic , saving data etc */
-	$location.path('/place/code');
-	// model.hide();
+    window.modal.show();
+    if( isDevice === false ){
+        window.modal.hide();
+    }
 });
 
-/*
-document.addEventListener('deviceready' , function(){
-	cordovaCache('uk.co.sites-ignite.aafinder-'+device.uuid, function(cache, crypt){
-		window.AA.cache = cache;
-		$location.path('/welcome');
-		model.hide();
-	});
-}, false);
-*/
-
-
+if(isDevice){
+    document.addEventListener('deviceready' , function(){
+        cordovaCache('uk.co.sites-ignite.aafinder-'+window.device.uuid, function(cache, crypt){
+            appService.setCache(cache);
+            appService.setCrypt(crypt);
+        });
+    }, false);
+}
 
 }]);

@@ -6,10 +6,10 @@ window.angular.module('app.controllers',[])
 	console.log('@home/');
 
 }])
-.controller('welcomeCtrl', [function(){
-
-	console.log('@welcome/');	
-
+.controller('welcomeCtrl', ['appService', function(appService){
+        appService.ready(function(){
+            window.modal.hide();
+        });
 }])
 .controller('infoCtrl', [function(){
 
