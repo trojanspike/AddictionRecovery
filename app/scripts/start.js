@@ -1,25 +1,8 @@
-/**
-document.addEventListener('deviceready' , function(){
-
-	window.AA = window.AA || {};
-	jQuery.cordovaCache('uk.co.sig.aafinder-'+window.device.uuid, function(cache, crypt){
-
-		window.AA[window.device.uuid] = {
-			cache : cache,
-			crypt : crypt
-		};
-
-		var con = cache.container('data').put(JSON.stringify({app:'AAfinder', date:new Date()}));
-		con.save();
-		
-	});
-
-}, false);
-**/
+'use strict';
 window.AA = window.AA || {};
-
-angular.module('aaFinder',['app.routes','onsen', 'SI.cordova']).run(["$location", "cordovaCache","$rootScope",
-function($location, cordovaCache, $rootScope){
+var ons = window.ons;
+window.angular.module('aaFinder',['app.routes','onsen', 'SI.cordova']).run(['$location',
+function($location){
 
 ons.ready(function(){
 	// model.show();

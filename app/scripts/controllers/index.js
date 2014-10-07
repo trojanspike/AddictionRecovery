@@ -1,5 +1,7 @@
-angular.module('app.controllers',[])
-.controller('homeCtrl', [function($scope){
+'use strict';
+
+window.angular.module('app.controllers',[])
+.controller('homeCtrl', [function(){
 	
 	console.log('@home/');
 

@@ -1,4 +1,5 @@
-angular.module("app.routes", ['ngRoute', 'app.controllers']).config(["$routeProvider",function($routeProvider){ 
+'use strict';
+window.angular.module('app.routes', ['ngRoute', 'app.controllers']).config(['$routeProvider', function($routeProvider){
 
 	$routeProvider
 	.when('/', {
@@ -38,6 +39,6 @@ angular.module("app.routes", ['ngRoute', 'app.controllers']).config(["$routeProv
 		templateUrl : 'templates/partials/place.html',
 		resolve : {}
 
-	}).otherwise({redirectTo : '/'})
+	}).otherwise({redirectTo : '/'});
 
 }]);
