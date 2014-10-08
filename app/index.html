@@ -16,9 +16,10 @@
 	 <link rel="stylesheet" href="bower_components/onsenui/build/css/onsen-css-components.css">
 
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/global.css">
+
     <link rel="stylesheet" href="styles/locationplace.css">
     <link rel="stylesheet" href="styles/ons-list.css">
+      <link rel="stylesheet" href="styles/global.css">
     <!-- endbuild -->
   </head>
   <body ng-app="aaFinder">
@@ -38,18 +39,18 @@
 
   <ons-template id="main.html">
       <ons-page>
-          <ons-toolbar>
-              <div class="left">
+          <ons-toolbar ng-controller="activeController">
+              <div class="left" ng-class="{activeLink: menu.isMenuOpened() }">
                   <a  ng-click="menu.toggleMenu()">
                       <ons-icon icon="ion-search" style="font-size: 32px; width: 1em;"></ons-icon>
                   </a>
               </div>
-              <div class="center">
+              <div class="center" ng-class="{activeLink: $route.current.activetab == '/welcome'}">
                   <a href="#/welcome">
                       AA Finder
                   </a>
               </div>
-              <div class="right">
+              <div class="right" ng-class="{activeLink: $route.current.activetab == '/'}">
                   <a href="#/">
                       <ons-icon icon="ion-home"></ons-icon>
                   </a>
@@ -58,17 +59,17 @@
 
             <ng-view></ng-view>
 
-          <ons-bottom-toolbar>
+          <ons-bottom-toolbar ng-controller="activeController">
               <ons-row>
                   <ons-col>
                       <app-exit>
                           <a> Exit </a>
                       </app-exit>
                   </ons-col>
-                  <ons-col>
+                  <ons-col ng-class="{activeLink: $route.current.activetab == '/info'}">
                       <a href="#/info">Info</a>
                   </ons-col>
-                  <ons-col>
+                  <ons-col ng-class="{activeLink: $route.current.activetab == '/settings'}">
                       <a href="#/settings">Settings</a>
                   </ons-col>
               </ons-row>
@@ -88,6 +89,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/cordovaCache/dist/crypto-aes.js"></script>
     <script src="bower_components/cordovaCache/dist/cordovaCache.min.js"></script>
+    <script src="bower_components/ng-filters/dist/angular-filters.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -107,7 +109,9 @@
 			<script type="text/javascript" src="scripts/constants/settings.js"></script>
 			<script type="text/javascript" src="scripts/factories/appData.js"></script>
 
-			<script type="text/javascript" src="scripts/controllers/index.js"></script>
+            <script type="text/javascript" src="scripts/controllers/domControllers.js"></script>
+			<script type="text/javascript" src="scripts/controllers/routeControllers.js"></script>
+
         <!-- endbuild -->
 </body>
 </html>

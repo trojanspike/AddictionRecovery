@@ -145,6 +145,22 @@ ons-page, section {
     text-align: center;
     line-height:250%
 }
+/******* Active links ********/
+.navigation-bar .activeLink {
+    border-bottom: 3px solid #ADADAD;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: border 0.8s;
+}
+.bottom-bar .activeLink {
+    border-top: 3px solid #ADADAD;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: border 0.8s;
+}
 /*****************/
 
 div > header h4, div > header h5, div > header p {
@@ -180,4 +196,25 @@ div > header h4, div > header h5, div > header p {
 }
 #welcome, #settings, #place, #locationPlace, #info, #home {
     height:100%;
+}
+
+.navigation-bar div:nth-child(2) a.activeLink{
+
+    /*background: rgb(0,0,0);*/
+    /*background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(36,38,40,1) 87%, rgba(69,72,77,1) 100%);*/
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(87%,rgba(36,38,40,1)), color-stop(100%,rgba(69,72,77,1)));*/
+    /*background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(36,38,40,1) 87%,rgba(69,72,77,1) 100%);*/
+    /*background: -o-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(36,38,40,1) 87%,rgba(69,72,77,1) 100%);*/
+    /*background: -ms-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(36,38,40,1) 87%,rgba(69,72,77,1) 100%);*/
+    /*background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(36,38,40,1) 87%,rgba(69,72,77,1) 100%);*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#45484d',GradientType=0 );*/
+
+    /*border-bottom-left-radius: 12px;*/
+    /*border-bottom-right-radius: 12px;*/
+
+    /*border-bottom: inset #FFF 1px;*/
+    /*border-left: inset #FFF 1px;*/
+    /*border-right: inset #FFF 1px;*/
+
+    /*margin:7px 0 0px 0;*/
 }
