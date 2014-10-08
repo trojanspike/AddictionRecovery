@@ -1,6 +1,5 @@
 .list {
     margin:2px;
-
     -webkit-box-shadow:0 0 12px -4px #000;
 }
 
@@ -28,6 +27,12 @@ border-bottom:1px solid #999;
 
 .list__item::before {
     color:#444444;
+}
+
+.list__item a {
+    text-decoration: none;
+    color:#444444;
+    display:block;
 }
 
 #place #google-map-link {

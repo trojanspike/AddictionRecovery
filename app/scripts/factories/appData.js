@@ -49,4 +49,15 @@ window.angular.module('app.data', ['app.constants'])
             defer.resolve( towns );
         });
         return defer.promise;
+}])
+.factory('Lplaces', ['appService', function(appService){
+    return function(townName){
+        var PlacesAvail = [], Data = JSON.parse( appService.Meetings.get() );
+        for( var t in Data ){
+            if( Data[t].town.toLowerCase() === townName ){
+                PlacesAvail.push( Data[t] );
+            }
+        }
+        return PlacesAvail;
+    };
 }]);

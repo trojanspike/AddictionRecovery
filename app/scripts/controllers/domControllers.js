@@ -5,7 +5,6 @@ window.angular.module('app.domControllers', [])
         window.modal.show();
         towns.then(function(data){
             $scope.towns = data;
-            $scope.$apply();
             window.modal.hide();
         });
 }])

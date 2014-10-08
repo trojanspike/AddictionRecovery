@@ -1,5 +1,5 @@
 'use strict';
-
+var PlacePassedData = null;
 window.angular.module('app.controllers',['app.domControllers'])
 .controller('homeCtrl', [function(){
 	
@@ -24,13 +24,25 @@ window.angular.module('app.controllers',['app.domControllers'])
 	console.log('@settingsCtrl/');	
 
 }])
-.controller('locationCtrl', [function(){
-
-	console.log('@locationCtrl/');	
-
+.controller('locationCtrl', ['places', '$scope',function(places, $scope){
+        $scope.data = places;
+        $scope.dataToPlace = function(data){
+            PlacePassedData = data;
+        };
 }])
-.controller('placeCtrl', [function(){
+.controller('placeCtrl', ['$scope',function($scope){
+        var _html = $(PlacePassedData.details),
+        _details = _html.find('#detailpanel .resultstable'),
+        days = {mon:'',tue:'',wed:'',thu:'',fri:'',sat:'',sun:''};
 
-	console.log('@placeCtrl/');	
-
+        _details.find('tr td').each(function(key, val){
+            if($(val).text()){
+                days[_details.find('tr th')[key].innerText.toLowerCase().substr(0,3)] = $(val).text();
+            }
+        });
+        console.log( PlacePassedData );
+    $scope.data = {
+        days : days,
+        place : PlacePassedData
+    };
 }]);

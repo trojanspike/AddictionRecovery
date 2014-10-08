@@ -13,7 +13,6 @@ window.angular.module('app.routes', ['ngRoute', 'angular-filters', 'app.controll
 
 		controller : 'welcomeCtrl',
 		templateUrl : 'templates/partials/welcome.html',
-		resolve : {},
         activetab: '/welcome'
 
 	})
@@ -35,7 +34,14 @@ window.angular.module('app.routes', ['ngRoute', 'angular-filters', 'app.controll
 
 		controller : 'locationCtrl',
 		templateUrl : 'templates/partials/locationPlace.html',
-		resolve : {}
+		resolve : {
+            places : ['Lplaces','$route',function(Lplaces, $route){
+                return {
+                    placeName : $route.current.params.place,
+                    places : Lplaces( $route.current.params.place )
+                };
+            }]
+        }
 
 	}).when('/place/:code', {
 
