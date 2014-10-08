@@ -1,6 +1,5 @@
 ## AA finder
-### Not complete
-#### I'll be completing the over the next few day & releasing to play store. Users can fork / edit, contribute and see how it works with cordova
+#### Complete & released to play store v2.0.0-rc . Users can fork / edit, contribute and see how it works with cordova
 
 Run at start & install plugins in the config.js
 ```bash
