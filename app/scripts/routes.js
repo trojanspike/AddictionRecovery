@@ -1,31 +1,35 @@
 'use strict';
-window.angular.module('app.routes', ['ngRoute', 'app.controllers']).config(['$routeProvider', function($routeProvider){
+window.angular.module('app.routes', ['ngRoute', 'angular-filters', 'app.controllers']).config(['$routeProvider', function($routeProvider){
 
 	$routeProvider
 	.when('/', {
 
 		controller : 'homeCtrl',
 		templateUrl : 'templates/partials/home.html',
-		resolve : {}
+		resolve : {},
+        activetab: '/'
 
 	}).when('/welcome', {
 
 		controller : 'welcomeCtrl',
 		templateUrl : 'templates/partials/welcome.html',
-		resolve : {}
+		resolve : {},
+        activetab: '/welcome'
 
 	})
 	.when('/info', {
 
 		controller : 'infoCtrl',
 		templateUrl : 'templates/partials/info.html',
-		resolve : {}
+		resolve : {},
+        activetab: '/info'
 
 	}).when('/settings', {
 
 		controller : 'settingsCtrl',
 		templateUrl : 'templates/partials/settings.html',
-		resolve : {}
+		resolve : {},
+        activetab: '/settings'
 
 	}).when('/location/:place', {
 

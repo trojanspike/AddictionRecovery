@@ -1,83 +1,20 @@
-<ons-page id="side-menu">
+<ons-page id="side-menu" ng-controller="menuCtrl">
     <ons-toolbar>
         <div class="center">
-            <input type="search" value="" placeholder="Search" class="search-input">
+            <input type="search"
+                   placeholder="Filtering coming soon"
+                   class="search-input"
+                   ng-model="menuFilter"
+                    >
         </div>
     </ons-toolbar>
     <ons-list>
 
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place" style="display:block">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place">location/place</a>
-        </ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-            <a href="#/location/place" >location/place</a>
-        </ons-list-item>
+        <div ng-repeat="town in towns">
+            <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
+                <a href="#/location/{{town | lowercase}}" style="display:block"> {{town}} </a>
+            </ons-list-item>
+        </div>
 
     </ons-list>
 </ons-page>
