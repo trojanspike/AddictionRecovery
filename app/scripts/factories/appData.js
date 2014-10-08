@@ -1,10 +1,12 @@
 'use strict';
 window.angular.module('app.data', ['app.constants'])
 .service('appService', ['$http','$q', 'apiInfo',function($http, $q, apiInfo){
-    var _Cache, _Crypt, _Meetings, _Settings, self = this;
+    var _Cache, _Crypt, self = this;
 
-    this.Settings = _Settings;
-    this.Meetings = _Meetings;
+    this.Settings = null;
+    this.Meetings = null;
+    this.Previous = null;
+
     /* Construct ran in #/welcome */
     this.ready = function(callback){
         (function CheckerCache(){
@@ -13,8 +15,15 @@ window.angular.module('app.data', ['app.constants'])
             } else {
                 /* Lets set up settings  */
                 self.Settings = _Cache.container('settings');
+                self.Previous = _Cache.container('previous1');
                 /* Lets check for meetings */
                 if( _Cache.list().indexOf('meetings') < 0 ){
+                    var ConnType = navigator.network.connection.type;
+                    if(ConnType === "none" || ConnType === "unknown"){
+                        return navigator.notification.alert('You don\'t seem to be connect to the internet', function(){
+                            return navigator.app.exitApp();
+                        },'No Network', 'OK');
+                    }
                     self.Meetings = _Cache.container('meetings');
                     $http({
                         method : 'GET',
@@ -34,6 +43,9 @@ window.angular.module('app.data', ['app.constants'])
     };
     this.setCrypt = function(c){
         _Crypt = c;
+    };
+    this.rmAll = function(cb){
+        _Cache.rmAll(cb);
     };
 }])
 .factory('towns', ['appService', '$q', function(appService, $q){
@@ -59,5 +71,50 @@ window.angular.module('app.data', ['app.constants'])
             }
         }
         return PlacesAvail;
+    };
+}])
+.factory('previous', ['appService', function(appService){
+        var Prev;
+        if(appService.Previous.get() === ''){
+            Prev = [];
+        } else {
+            Prev = JSON.parse( appService.Previous.get() );
+        }
+        return {
+            get : function(){
+                return Prev;
+            },
+            put : function(town){
+                if( Prev.indexOf(town) < 0 ){
+                    if( Prev.length === 5){ /* TODO make user setting */
+                        Prev.splice(0,1);
+                    }
+                    Prev.push(town);
+                    appService.Previous.put( JSON.stringify( Prev )).save();
+                }
+            }
+        };
+}])
+.factory('settings', ['appService', 'apiInfo', '$http', function(appService, apiInfo,$http){
+    return {
+        update : function(){
+            var ConnType = navigator.network.connection.type;
+            if(ConnType === "none" || ConnType === "unknown"){
+                return navigator.notification.alert('You don\'t seem to be connect to the internet', function(){
+                    return window.modal.hide();
+                },'No Network', 'OK');
+            }
+            $http({
+                method : 'GET',
+                url : apiInfo.url
+            }).then(function(obj){
+                appService.Meetings.put( JSON.stringify(obj.data) ).save(function(){
+                    window.modal.hide();
+                });
+            });
+        },
+        clearAll : function(callback){
+            appService.rmAll(callback);
+        }
     };
 }]);

@@ -4,28 +4,58 @@
     </header>
 
     <section>
-        <ons-list modifier="inset" class="settings-list">
-            <ons-list-header><ons-icon icon="fa-info"></ons-icon> App info</ons-list-header>
-            <ons-list-item>
-                1st App info
-            </ons-list-item>
 
+        <ons-list modifier="inset" class="settings-list">
+            <ons-list-header><ons-icon icon="fa-info"></ons-icon> AA resourses</ons-list-header>
+            <ons-list-item modifier="chevron">
+                <a href="http://www.alcoholicsanonymous.ie">AA website: alcoholicsanonymous.ie</a>
+            </ons-list-item>
+            <ons-list-item modifier="chevron">
+                <a href="http://www.communityni.org/">PIPs NI community</a>
+            </ons-list-item>
+            <ons-list-item>
+                Drinkline : 0800 917 8282
+            </ons-list-item>
+            <ons-list-item>
+                Mind Info Line : 0845 766 0163
+            </ons-list-item>
+            <ons-list-item>
+                Lifeline : 0808 808 8000
+            </ons-list-item>
         </ons-list>
 
         <ons-list modifier="inset" class="settings-list">
+            <ons-list-header><ons-icon icon="fa-info"></ons-icon> App info</ons-list-header>
+            <ons-list-item>
+                App Verion : <span class="pull-right">{{ data.appVersion }}</span>
+            </ons-list-item>
+            <ons-list-item>
+                App build Date : <span class="pull-right">{{ data.appBuild }}</span>
+            </ons-list-item>
+        </ons-list>
+
+        <ons-list modifier="inset" class="settings-list">
+            <ons-list-header><ons-icon icon="fa-info"></ons-icon> Developer info</ons-list-header>
+            <ons-list-item>
+                Name : {{ data.devName }}
+            </ons-list-item>
+            <ons-list-item>
+                email : {{ data.devEmail }}
+            </ons-list-item>
+            <ons-list-item>
+                wesite : {{ data.devSite }}
+            </ons-list-item>
+        </ons-list>
+
+
+
+        <ons-list modifier="inset" class="settings-list" style="display:none;">
             <ons-list-item modifier="chevron">
                 Terms of Use
             </ons-list-item>
 
             <ons-list-item modifier="chevron">
                 Privacy Policy
-            </ons-list-item>
-        </ons-list>
-
-        <ons-list modifier="inset" class="settings-list">
-            <ons-list-header><ons-icon icon="fa-info"></ons-icon> AA resourses</ons-list-header>
-            <ons-list-item>
-                1st AA resourses
             </ons-list-item>
         </ons-list>
 

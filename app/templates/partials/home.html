@@ -5,21 +5,9 @@
 
     <section>
         <ons-list modifier="inset" class="settings-list">
-            <ons-list-header>Previous Locations</ons-list-header>
-            <ons-list-item modifier="chevron">
-                <a href="#/location/place">/location/place</a>
-            </ons-list-item>
-            <ons-list-item modifier="chevron">
-                <a href="#/location/place">/location/place</a>
-            </ons-list-item>
-            <ons-list-item modifier="chevron">
-                <a href="#/location/place">/location/place</a>
-            </ons-list-item>
-            <ons-list-item modifier="chevron">
-                <a href="#/location/place">/location/place</a>
-            </ons-list-item>
-            <ons-list-item modifier="chevron">
-                <a href="#/location/place">/location/place</a>
+            <ons-list-header> {{ prevs.length }} Previous Locations</ons-list-header>
+            <ons-list-item ng-repeat="prev in prevs" modifier="chevron">
+                <a ng-href="#/location/{{ prev | lowercase }}"> {{ prev }} </a>
             </ons-list-item>
         </ons-list>
 

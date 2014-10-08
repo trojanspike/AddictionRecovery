@@ -1,4 +1,4 @@
-
+'use strict';
 
 window.angular.module('app.constants',[])
 .constant('apiInfo', {
@@ -12,6 +12,6 @@ window.angular.module('app.constants',[])
     email : 'aafinder@sites-ignite.co.uk'
 })
 .constant('appinfo', {
-    version : '',
-    buildDate : ''
+    version : '2.0.0-rc',
+    buildDate : '09/10/2014'
 });

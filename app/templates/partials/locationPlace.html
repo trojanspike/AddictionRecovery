@@ -8,7 +8,7 @@
             <ons-list-header><i class="fa fa-map-marker"></i> {{ data.places.length }} Locations in {{ data.placeName }}</ons-list-header>
 
             <ons-list-item ng-repeat="place in data.places" modifier="chevron">
-                <a href="#/place/{{ place.code }}" ng-click="dataToPlace(place)"> {{ place.name }} </a>
+                <a ng-href="#/place/{{ place.code }}" ng-click="dataToPlace(place)"> {{ place.name }} </a>
             </ons-list-item>
 
         </ons-list>

@@ -25,7 +25,9 @@
   <body ng-app="aaFinder">
 
   <ons-modal var="modal">
-      <p> Plesae wait </p>
+      <img src="img/mainbg.png" width="35%">
+      <hr>
+      Please Wait <ons-icon icon="refresh" size="15px" spin="true"></ons-icon>
   </ons-modal>
 
   <!--############-->
@@ -62,9 +64,7 @@
           <ons-bottom-toolbar ng-controller="activeController">
               <ons-row>
                   <ons-col>
-                      <app-exit>
-                          <a> Exit </a>
-                      </app-exit>
+                      <app-exit></app-exit>
                   </ons-col>
                   <ons-col ng-class="{activeLink: $route.current.activetab == '/info'}">
                       <a href="#/info">Info</a>

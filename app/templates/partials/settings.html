@@ -6,16 +6,22 @@
     <section>
         <ons-list modifier="inset" class="settings-list">
             <ons-list-header>Data</ons-list-header>
-            <ons-list-item>
-                1st data
+            <ons-list-item modifier="cog" ng-click="upDate()">
+                Update AA meetings <ons-icon class="pull-right" icon="ion-gear-a" style="vertical-align: -4px; font-size: 32px;"></ons-icon>
+            </ons-list-item>
+            <ons-list-item modifier="cog" ng-click="clear()">
+                Clear and reset  <ons-icon class="pull-right" icon="ion-gear-a" style="vertical-align: -4px; font-size: 32px;"></ons-icon>
             </ons-list-item>
         </ons-list>
 
         <ons-list modifier="inset" class="settings-list">
-            <ons-list-header>settings</ons-list-header>
-            <ons-list-item>
-                Twitter
-                <ons-switch modifier="list-item"></ons-switch>
+            <ons-list-header>Settings</ons-list-header>
+            <ons-list-item ng-click="autoEnable()">
+                Auto Update
+                <ons-switch style="display:none;" modifier="list-item"></ons-switch>
+            </ons-list-item>
+            <ons-list-item ng-click="changePwd()">
+                Change Encryption password
             </ons-list-item>
         </ons-list>
 

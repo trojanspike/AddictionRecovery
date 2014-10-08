@@ -1,9 +1,9 @@
 'use strict';
 var PlacePassedData = null;
 window.angular.module('app.controllers',['app.domControllers'])
-.controller('homeCtrl', [function(){
-	
-	console.log('@home/');
+.controller('homeCtrl', ['previous','$scope',function(previous, $scope){
+
+        $scope.prevs = previous.get();
 
 }])
 .controller('welcomeCtrl', ['appService', function(appService){
@@ -14,18 +14,52 @@ window.angular.module('app.controllers',['app.domControllers'])
             window.modal.hide();
         });
 }])
-.controller('infoCtrl', [function(){
-
-	console.log('@infoCtrl/');	
-
+.controller('infoCtrl', ['appinfo','devinfo','$scope',function(appinfo, devinfo, $scope){
+    $scope.data = {
+        devName : devinfo.name,
+        devEmail : devinfo.email,
+        devSite : devinfo.url,
+        appVersion : appinfo.version,
+        appBuild : appinfo.buildDate
+    };
 }])
-.controller('settingsCtrl', [function(){
-
-	console.log('@settingsCtrl/');	
-
+.controller('settingsCtrl', ['settings','$scope',function(settings, $scope){
+        $scope.upDate = function(){
+            navigator.notification.confirm('Are you sure you want to update?', function(input){
+                if( input === 2 ){
+                    /* Check network -> if network , then modal & run update */
+                    var ConnType = navigator.network.connection.type;
+                    if(ConnType !== "none" && ConnType !== "unknown"){
+                        /* Do Update */
+                        window.modal.show();
+                        settings.update();
+                    } else {
+                        navigator.notification.alert('You don\'t seem to be connect to the internet', function(){},'No Network', 'OK');
+                    }
+                }
+            }, 'Update', ['Cancel', 'OK']);
+        };
+        $scope.clear = function(){
+            navigator.notification.confirm('Are you sure you want to clear everything?', function(input){
+                if( input === 2 ){
+                    /* show modal and clear all , then exi app */
+                    window.modal.show();
+                    settings.clearAll(function(){
+                        navigator.app.exitApp();
+                    });
+                }
+            }, 'Update', ['Cancel', 'OK']);
+        };
+        $scope.autoEnable = function(){
+            navigator.notification.alert('Sorry , this feature isn\'t available yet', function(){},'Unavailable', 'OK');
+        };
+        $scope.changePwd = function(){
+            navigator.notification.alert('Sorry , this feature isn\'t available yet', function(){},'Unavailable', 'OK');
+        };
 }])
-.controller('locationCtrl', ['places', '$scope',function(places, $scope){
+.controller('locationCtrl', ['places','previous', '$scope',function(places, previous, $scope){
         $scope.data = places;
+        previous.put( places.placeName );
         $scope.dataToPlace = function(data){
             PlacePassedData = data;
         };
@@ -40,7 +74,6 @@ window.angular.module('app.controllers',['app.domControllers'])
                 days[_details.find('tr th')[key].innerText.toLowerCase().substr(0,3)] = $(val).text();
             }
         });
-        console.log( PlacePassedData );
     $scope.data = {
         days : days,
         place : PlacePassedData

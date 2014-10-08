@@ -12,7 +12,7 @@
 
         <div ng-repeat="town in towns">
             <ons-list-item modifier="chevron" ng-click="menu.closeMenu()">
-                <a href="#/location/{{town | lowercase}}" style="display:block"> {{town}} </a>
+                <a ng-href="#/location/{{town | lowercase}}" style="display:block"> {{town}} </a>
             </ons-list-item>
         </div>
 
