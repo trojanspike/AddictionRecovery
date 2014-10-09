@@ -5,13 +5,16 @@ Run at start & install plugins in the config.js
 ```bash
 $ ./init.sh
 ```
+
+PlayStore : [AA Finder](https://play.google.com/store/apps/details?id=uk.co.sites_ignite.AAfinderApp)
+
 --
 ![Icon](https://raw.github.com/trojanspike/AA-finder/photos/AAicon.png)
 ---
-![Home](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/home.png)
-![Information](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/information.png)
-![Settings](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/settings.png)
-![Time-infi-map](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/times-info-map.png)
+![Home](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/home.png =450x)
+![Information](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/information.png =450x)
+![Settings](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/settings.png =450x)
+![Time-infi-map](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/times-info-map.png =450x)
 ---
 
 Plugin search url :
