@@ -2,10 +2,9 @@
   "name": "aa-finder",
   "private": true,
   "dependencies": {
-    "jquery": "~1.11.1",
     "onsenui": "~1.1.4",
     "angular-route": "~1.2.26",
     "cordovaCache": "https://github.com/trojanspike/cordovaCache.git#1.1.0",
-    "ng-filters": "*"
+    "ngCordova": "~0.1.4-alpha"
   }
 }
