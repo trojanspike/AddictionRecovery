@@ -4,9 +4,12 @@ window.angular.module('app.domControllers', [])
 .controller('menuCtrl', ['$scope', 'towns', function($scope, towns){
         window.modal.show();
         towns.then(function(data){
-            $scope.towns = data;
+            $scope.towns = data.sort();
             window.modal.hide();
         });
+        $scope.menuChange = function(){
+            alert();
+        };
 }])
 .controller('activeController', ['$route', '$scope', function($route, $scope){
     $scope.$route = $route;
