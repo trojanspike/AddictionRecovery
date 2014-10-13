@@ -1,5 +1,5 @@
 'use strict';
-window.angular.module('app.routes', ['ngRoute', 'angular-filters', 'app.controllers']).config(['$routeProvider', function($routeProvider){
+window.angular.module('app.routes', ['ngRoute', 'app.controllers']).config(['$routeProvider', function($routeProvider){
 
 	$routeProvider
 	.when('/', {

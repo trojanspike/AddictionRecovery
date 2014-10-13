@@ -7,8 +7,11 @@ window.angular.module('app.domControllers', [])
             $scope.towns = data.sort();
             window.modal.hide();
         });
-        $scope.menuChange = function(){
-            alert();
+        $scope.menuFilter = '';
+        $scope.closeMenu = function(){
+            $scope.menuFilter = '';
+            menu.closeMenu();
+
         };
 }])
 .controller('activeController', ['$route', '$scope', function($route, $scope){

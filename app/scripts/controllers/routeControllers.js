@@ -6,10 +6,11 @@ window.angular.module('app.controllers',['app.domControllers'])
         $scope.prevs = previous.get();
 
 }])
-.controller('welcomeCtrl', ['appService', function(appService){
+.controller('welcomeCtrl', ['appService', 'devinfo', '$scope',function(appService, devinfo, $scope){
         /* Check if online -> network , else alert network
          connect needed -> exit on ok
          , else continue*/
+        $scope.website = devinfo.url;
         appService.ready(function(){
             window.modal.hide();
         });
@@ -48,13 +49,7 @@ window.angular.module('app.controllers',['app.domControllers'])
                         navigator.app.exitApp();
                     });
                 }
-            }, 'Update', ['Cancel', 'OK']);
-        };
-        $scope.autoEnable = function(){
-            navigator.notification.alert('Sorry , this feature isn\'t available yet', function(){},'Unavailable', 'OK');
-        };
-        $scope.changePwd = function(){
-            navigator.notification.alert('Sorry , this feature isn\'t available yet', function(){},'Unavailable', 'OK');
+            }, 'Clear all', ['Cancel', 'OK']);
         };
 }])
 .controller('locationCtrl', ['places','previous', '$scope',function(places, previous, $scope){
@@ -65,15 +60,19 @@ window.angular.module('app.controllers',['app.domControllers'])
         };
 }])
 .controller('placeCtrl', ['$scope',function($scope){
-        var _html = $(PlacePassedData.details),
+        var _html = angular.element(PlacePassedData.details),
         _details = _html.find('#detailpanel .resultstable'),
         days = {mon:'',tue:'',wed:'',thu:'',fri:'',sat:'',sun:''};
-
+        console.log('@2' + _details);
         _details.find('tr td').each(function(key, val){
             if($(val).text()){
                 days[_details.find('tr th')[key].innerText.toLowerCase().substr(0,3)] = $(val).text();
             }
         });
+
+    $scope.openLink = function(lat, lng){
+        navigator.app.loadUrl('https://maps.google.co.uk/maps?q='+lat+','+lng+'', {openExternal:true})
+    };
     $scope.data = {
         days : days,
         place : PlacePassedData

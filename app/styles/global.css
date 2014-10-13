@@ -74,7 +74,8 @@ input[type="search"].search-input::-webkit-search-cancel-button {
 /*****************/
 
 ons-page, section {
-    padding: 20px 0 35px 0;
+    padding: 20px 5px 35px 0;
+
 }
 
 /* NAVs */
@@ -147,7 +148,7 @@ ons-page, section {
 }
 /******* Active links ********/
 .navigation-bar .activeLink {
-    border-bottom: 3px solid #ADADAD;
+    border-bottom: 3px solid #3338ad;
 
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -155,7 +156,7 @@ ons-page, section {
     -webkit-transition: border 0.8s;
 }
 .bottom-bar .activeLink {
-    border-top: 3px solid #ADADAD;
+    border-top: 3px solid #3338ad;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;

@@ -23,8 +23,8 @@
                     <img ng-src="http://maps.googleapis.com/maps/api/staticmap?center={{ data.place.lat }},{{ data.place.lng }}=17&size=600x300&markers=color:red%7C{{ data.place.lat }},{{ data.place.lng }}&maptype=hybrid&sensor=false" />
                 </div>
                 <hr />
-                <a id="google-map-link" ng-href="https://maps.google.co.uk/maps?q={{ data.place.lat }},{{ data.place.lng }}"
-                   class="btn">View on google maps</a>
+                <a id="google-map-link" ng-click="openLink(data.place.lat, data.place.lng)"
+                   class="btn" target="_new">View on google maps</a>
                 <hr />
                 <div id="description">
                     {{ data.place.description }}

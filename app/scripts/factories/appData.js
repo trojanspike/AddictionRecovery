@@ -15,7 +15,10 @@ window.angular.module('app.data', ['app.constants'])
             } else {
                 /* Lets set up settings  */
                 self.Settings = _Cache.container('settings');
-                self.Previous = _Cache.container('previous1');
+                if(self.Settings.get() === ''){
+                    self.Settings.put( JSON.stringify({}) ).save();
+                }
+                self.Previous = _Cache.container('previous');
                 /* Lets check for meetings */
                 if( _Cache.list().indexOf('meetings') < 0 ){
                     var ConnType = navigator.network.connection.type;

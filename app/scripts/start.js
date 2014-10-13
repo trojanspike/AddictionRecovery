@@ -1,8 +1,10 @@
 'use strict';
 var ons = window.ons;
 var isDevice = true;
-window.angular.module('aaFinder',['app.routes','onsen', 'SI.cordova', 'app.data']).run(['$location','cordovaCache','appService',
-function($location, cordovaCache, appService){
+window.angular.module('aaFinder',['app.routes','onsen', 'SI.cordova', 'app.data', 'app.constants'])
+.run(['$location','cordovaCache','appService', 'settings', 'appinfo',
+function($location, cordovaCache, appService, settings, appinfo){
+
     $location.path('/welcome');
 ons.ready(function(){
     window.modal.show();
@@ -13,7 +15,12 @@ ons.ready(function(){
 
 if(isDevice){
     document.addEventListener('deviceready' , function(){
-        cordovaCache('uk.co.sites-ignite.aafinder-'+window.device.uuid, function(cache, crypt){
+
+        document.addEventListener("backbutton", function(e){
+            navigator.app.backHistory();
+        }, false);
+
+        cordovaCache('uk.co.sites-ignite.aafinder-'+appinfo.version+window.device.uuid, function(cache, crypt){
             var Continue = function(){
                 appService.setCache(cache);
                 appService.setCrypt(crypt);

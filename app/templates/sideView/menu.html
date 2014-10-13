@@ -8,7 +8,7 @@
                          ng-model="menuFilter"
                 >
         </div>
-            <ons-list-item ng-repeat="town in towns | filter:menuFilter" modifier="chevron" ng-click="menu.closeMenu()">
+            <ons-list-item ng-repeat="town in towns | filter:menuFilter" modifier="chevron" ng-click="closeMenu()">
                 <a ng-href="#/location/{{town | lowercase}}" style="display:block"> {{town}} </a>
             </ons-list-item>
 
