@@ -1,5 +1,7 @@
 node_modules
-www
+www/
+!www/git.index
+Server/
 .tmp
 bower_components
 npm-debug.log
@@ -16,5 +18,3 @@ plugins/*
 
 apk/*
 !apk/git.index
-
-X_www
