@@ -1,3 +1,11 @@
 #!/usr/bin/env bash
 
-npm i && bower i && cd ./test/ && bower i && cd ../ && cordova platform add android && grunt build && grunt serve
+
+for i in $(cat ./Plugins.txt | sed 's/#.*//'); 
+do 
+	cordova plugin add $i; 
+done
+
+cordova platform add android
+
+npm i && bower i && cd ./test/ && bower i && cd ../ && grunt build && grunt serve
