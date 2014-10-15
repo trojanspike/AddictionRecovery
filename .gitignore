@@ -1,7 +1,6 @@
 node_modules
 www/
 !www/git.index
-Server/
 .tmp
 bower_components
 npm-debug.log
