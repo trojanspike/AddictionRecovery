@@ -1,7 +1,10 @@
 node_modules
 www/
 !www/git.index
+<<<<<<< HEAD
 
+=======
+>>>>>>> 401e7de46b7c89c2d2769a9e97192ec895c19e73
 .tmp
 bower_components
 npm-debug.log
