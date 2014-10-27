@@ -1,7 +1,7 @@
 'use strict';
 window.angular.module('app.data', ['app.constants'])
-.service('appService', ['$http','$q', 'apiInfo',function($http, $q, apiInfo){
-    var _Cache, _Crypt, self = this;
+.service('appService', ['$http','$q', 'apiInfo', '$location',function($http, $q, apiInfo, $location){
+    var _Cache, _Crypt, self = this, firstLoad = false;
 
     this.Settings = null;
     this.Meetings = null;
@@ -36,7 +36,13 @@ window.angular.module('app.data', ['app.constants'])
                     });
                 } else {
                     self.Meetings = _Cache.container('meetings');
-                    callback();
+                    if(!firstLoad){
+                        firstLoad = true;
+                        $location.path('/home');
+                        callback();
+                    } else {
+                        callback();
+                    }
                 }
             }
         })();
