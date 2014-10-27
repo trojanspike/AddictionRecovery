@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget 
 	id="uk.co.sites-ignite.AAfinderApp" 
-	version="2.1.0-r" xmlns="http://www.w3.org/ns/widgets"
-    versionCode="3"
+	version="2.1.6" xmlns="http://www.w3.org/ns/widgets"
+    versionCode="6"
 	xmlns:cdv="http://cordova.apache.org/ns/1.0"
 >
     <name>AA finder</name>
@@ -40,13 +40,13 @@
     <preference name="target-device" value="handset" />
     <preference name="fullscreen" value="false" />
 
-	<preference name="SplashScreen" value="foo" />
-	<preference name="SplashScreenDelay" value="10000" />
+    <preference name="SplashScreen" value="foo" />
+    <preference name="SplashScreenDelay" value="10000" />
 
     <!-- access origins : specify -->
     <access subdomains="false" origin="http://www.alcoholicsanonymous.ie/" />
     <access subdomains="true" origin="https://googleapis" />
-    <access subdomains="true" origin="http://192.168.1.3" />
+    <access subdomains="true" origin="http://192.168.1.2" />
 
 	<access origin="*"/>
 
