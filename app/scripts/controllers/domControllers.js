@@ -10,8 +10,10 @@ window.angular.module('app.domControllers', [])
         $scope.menuFilter = '';
         $scope.closeMenu = function(){
             $scope.menuFilter = '';
-            menu.closeMenu();
-
+            cordova.plugins.SoftKeyboard.isShowing(function(){ 
+                cordova.plugins.SoftKeyboard.hide(function(){}, function(){});
+                menu.closeMenu();
+            }, menu.closeMenu )
         };
 }])
 .controller('activeController', ['$route', '$scope', function($route, $scope){

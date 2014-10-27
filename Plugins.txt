@@ -3,3 +3,4 @@ https://git-wip-us.apache.org/repos/asf/cordova-plugin-geolocation.git
 https://git-wip-us.apache.org/repos/asf/cordova-plugin-network-information.git
 https://git-wip-us.apache.org/repos/asf/cordova-plugin-dialogs.git
 org.apache.cordova.file-transfer
+org.apache.cordova.plugin.softkeyboard
