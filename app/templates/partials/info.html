@@ -8,10 +8,10 @@
         <ons-list modifier="inset" class="settings-list">
             <ons-list-header><ons-icon icon="fa-info"></ons-icon> AA resourses</ons-list-header>
             <ons-list-item modifier="chevron">
-                <a href="http://www.alcoholicsanonymous.ie">AA website: alcoholicsanonymous.ie</a>
+                <a ng-click="url('http://www.alcoholicsanonymous.ie')">AA website: alcoholicsanonymous.ie</a>
             </ons-list-item>
             <ons-list-item modifier="chevron">
-                <a href="http://www.communityni.org/">PIPs NI community</a>
+                <a ng-click="url('http://www.communityni.org/')">PIPs NI community</a>
             </ons-list-item>
             <ons-list-item>
                 Drinkline : 0800 917 8282
@@ -50,10 +50,10 @@
                 Name : {{ data.devName }}
             </ons-list-item>
             <ons-list-item>
-                email : {{ data.devEmail }}
+                Email : {{ data.devEmail }}
             </ons-list-item>
             <ons-list-item>
-                wesite : {{ data.devSite }}
+                Wesite : {{ data.devSite }}
             </ons-list-item>
         </ons-list>
 

@@ -23,6 +23,9 @@ window.angular.module('app.controllers',['app.domControllers'])
         appVersion : appinfo.version,
         appBuild : appinfo.buildDate
     };
+    $scope.url = function(goto){
+        navigator.app.loadUrl(goto, {openExternal:true})
+    };
 }])
 .controller('settingsCtrl', ['settings','$scope',function(settings, $scope){
         $scope.upDate = function(){
