@@ -154,13 +154,30 @@ ons-page, section {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-transition: border 0.8s;
+        background: rgb(69,72,77);
+    background: -moz-linear-gradient(top,  rgba(69,72,77,1) 0%, rgba(36,38,40,1) 13%, rgba(0,0,0,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(69,72,77,1)), color-stop(13%,rgba(36,38,40,1)), color-stop(100%,rgba(0,0,0,1)));
+    background: -webkit-linear-gradient(top,  rgba(69,72,77,1) 0%,rgba(36,38,40,1) 13%,rgba(0,0,0,1) 100%);
+    background: -o-linear-gradient(top,  rgba(69,72,77,1) 0%,rgba(36,38,40,1) 13%,rgba(0,0,0,1) 100%);
+    background: -ms-linear-gradient(top,  rgba(69,72,77,1) 0%,rgba(36,38,40,1) 13%,rgba(0,0,0,1) 100%);
+    background: linear-gradient(to bottom,  rgba(69,72,77,1) 0%,rgba(36,38,40,1) 13%,rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 );
 }
 .bottom-bar .activeLink {
     border-top: 3px solid #3338ad;
+
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-transition: border 0.8s;
+        background: rgb(0,0,0);
+    background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(36,38,40,1) 87%, rgba(69,72,77,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(87%,rgba(36,38,40,1)), color-stop(100%,rgba(69,72,77,1)));
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(36,38,40,1) 87%,rgba(69,72,77,1) 100%);
+    background: -o-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(36,38,40,1) 87%,rgba(69,72,77,1) 100%);
+    background: -ms-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(36,38,40,1) 87%,rgba(69,72,77,1) 100%);
+    background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(36,38,40,1) 87%,rgba(69,72,77,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#45484d',GradientType=0 );
 }
 /*****************/
 

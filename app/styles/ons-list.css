@@ -25,6 +25,8 @@ border-bottom:1px solid #999;
     height:30px;
 }
 
+.list__item{ min-height:30px; }
+
 .list__item::before {
     color:#444444;
 }
