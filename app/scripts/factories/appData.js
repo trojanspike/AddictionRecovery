@@ -126,4 +126,8 @@ window.angular.module('app.data', ['app.constants'])
             appService.rmAll(callback);
         }
     };
+}])
+
+.factory('socket', [function(){
+	return io.connect('https://aa-finder-data.herokuapp.com/mobile');
 }]);

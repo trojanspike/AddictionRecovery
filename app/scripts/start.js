@@ -2,8 +2,8 @@
 var ons = window.ons;
 var isDevice = true;
 window.angular.module('aaFinder',['app.routes','onsen', 'SI.cordova', 'app.data', 'app.constants'])
-.run(['$location','cordovaCache','appService', 'settings', 'appinfo',
-function($location, cordovaCache, appService, settings, appinfo){
+.run(['$location','cordovaCache','appService', 'settings', 'appinfo', 'socket',
+function($location, cordovaCache, appService, settings, appinfo, socket){
 
     $location.path('/welcome');
 ons.ready(function(){

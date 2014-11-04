@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget 
 	id="uk.co.sites-ignite.AAfinderApp" 
-	version="2.1.6" xmlns="http://www.w3.org/ns/widgets"
-    versionCode="6"
+	version="2.1.8" xmlns="http://www.w3.org/ns/widgets"
+    versionCode="7"
 	xmlns:cdv="http://cordova.apache.org/ns/1.0"
 >
     <name>AA finder</name>
@@ -34,7 +34,7 @@
     <feature name="http://api.phonegap.com/1.0/notification"/>
 
     <!-- PERFENCES : set orientation etc -->
-    <preference name="phonegap-version" value="3.4.0" />
+    <preference name="phonegap-version" value="3.5.0" />
     <preference name="orientation" value="portrait" />
     <preference name="exit-on-suspend" value="true" />
     <preference name="target-device" value="handset" />

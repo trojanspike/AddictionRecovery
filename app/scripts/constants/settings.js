@@ -3,7 +3,7 @@
 window.angular.module('app.constants',[])
 .constant('apiInfo', {
 /* url-main, markers, details */
-    url : 'https://aa-finder-data.herokuapp.com/data.json'
+    url : 'https://aa-finder-data.herokuapp.com/api/v1/data'
 
 })
 .constant('devinfo', {
@@ -12,6 +12,6 @@ window.angular.module('app.constants',[])
     email : 'aafinder@sites-ignite.co.uk'
 })
 .constant('appinfo', {
-    version : '2.1.6',
-    buildDate : '27/10/2014'
+    version : '2.1.8',
+    buildDate : '04/11/2014'
 });
