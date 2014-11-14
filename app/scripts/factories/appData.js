@@ -129,5 +129,5 @@ window.angular.module('app.data', ['app.constants'])
 }])
 
 .factory('socket', [function(){
-	return io.connect('https://aa-finder-data.herokuapp.com/mobile');
+	//- return io.connect('https://aa-finder-data.herokuapp.com/mobile');
 }]);

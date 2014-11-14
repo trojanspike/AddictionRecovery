@@ -2,9 +2,9 @@
 var ons = window.ons;
 var isDevice = true;
 window.angular.module('aaFinder',['app.routes','onsen', 'SI.cordova', 'app.data', 'app.constants'])
-.run(['$location','cordovaCache','appService', 'settings', 'appinfo', 'socket',
-function($location, cordovaCache, appService, settings, appinfo, socket){
-
+.run(['$location','cordovaCache','appService', 'settings', 'appinfo', 'apiInfo',
+function($location, cordovaCache, appService, settings, appinfo, apiInfo){
+console.log(apiInfo);
     $location.path('/welcome');
 ons.ready(function(){
     window.modal.show();
@@ -20,7 +20,7 @@ if(isDevice){
             navigator.app.backHistory();
         }, false);
 
-        cordovaCache('uk.co.sites-ignite.aafinder-'+appinfo.version+window.device.uuid, function(cache, crypt){
+        cordovaCache( apiInfo.cachePath+window.device.uuid , function(cache, crypt){
             var Continue = function(){
                 appService.setCache(cache);
                 appService.setCrypt(crypt);
