@@ -1,6 +1,6 @@
 module.exports = {
 
-	version : '2.1.10',
-	apkVersion : 8
+	version : '2.1.11',
+	apkVersion : 9
 
 };

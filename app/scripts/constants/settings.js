@@ -12,6 +12,6 @@ window.angular.module('app.constants',[])
     email : 'aafinder@sites-ignite.co.uk'
 })
 .constant('appinfo', {
-    version : '2.1.10',
-    buildDate : '14/11/2014'
+    version : '2.1.11',
+    buildDate : '15/11/2014'
 });
