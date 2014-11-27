@@ -2,9 +2,9 @@
 var ons = window.ons;
 var isDevice = true;
 window.angular.module('aaFinder',['app.routes','onsen', 'SI.cordova', 'app.data', 'app.constants'])
-.run(['$location','cordovaCache','appService', 'settings', 'appinfo', 'apiInfo',
-function($location, cordovaCache, appService, settings, appinfo, apiInfo){
-console.log(apiInfo);
+.run(['$location','cordovaCache','appService', 'settings', 'appinfo', 'apiInfo', 'socket',
+function($location, cordovaCache, appService, settings, appinfo, apiInfo, socket){
+
     $location.path('/welcome');
 ons.ready(function(){
     window.modal.show();
@@ -26,26 +26,6 @@ if(isDevice){
                 appService.setCrypt(crypt);
             };
             Continue();
-
-            //var _EncryptionKey = window.localStorage.getItem('encryptionKey');
-            //if( _EncryptionKey === null && crypt.isset() === false ){
-            //    /* no password found in storage , and isn't set, one is required */
-            //    navigator.notification.prompt('An encryption password is required', function(input){
-            //        /* input.buttonIndex == 2 : OK */
-            //        /* input.input1 == input-data */
-            //    }, 'Security', ['Cancel', 'OK']);
-            //}
-            //if( _EncryptionKey === null && crypt.isset() === true ){
-            //    /* no password found in storage , but isset */
-            //    navigator.notification.prompt('Please ent your encryption password', function(input){
-            //        /* input.buttonIndex == 2 : OK */
-            //        /* input.input1 == input-data */
-            //    }, 'Security', ['Cancel', 'OK']);
-            //} else {
-            //    /* Auto enter encryption pwd */
-            //    // crypt.init(_EncryptionKey, success, fail);
-            //}
-
         });
     }, false);
 }

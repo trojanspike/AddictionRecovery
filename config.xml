@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget 
 	id="uk.co.sites-ignite.AAfinderApp" 
-	version="2.1.11" xmlns="http://www.w3.org/ns/widgets"
-    versionCode="9"
+	version="2.2.0" xmlns="http://www.w3.org/ns/widgets"
+    versionCode="11"
 	xmlns:cdv="http://cordova.apache.org/ns/1.0"
 >
     <name>AA finder</name>

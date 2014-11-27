@@ -1,10 +1,20 @@
 'use strict';
-var PlacePassedData = null;
+var PlacePassedData = null, showClose = false;
 window.angular.module('app.controllers',['app.domControllers'])
-.controller('homeCtrl', ['previous','$scope',function(previous, $scope){
+.controller('homeCtrl', ['previous','$scope', 'closest',function(previous, $scope, closest){
+
+
 
         $scope.prevs = previous.get();
-
+		$scope.dataToPlace = function(data){
+            PlacePassedData = data;
+        };
+		$scope.isOnline = function(){
+			return (navigator.onLine)?'Online':'Offline';
+		};
+		closest.then(function(data){
+			$scope.closest = data;
+		});
 }])
 .controller('welcomeCtrl', ['appService', 'devinfo', '$scope',function(appService, devinfo, $scope){
         /* Check if online -> network , else alert network
@@ -26,6 +36,11 @@ window.angular.module('app.controllers',['app.domControllers'])
     $scope.url = function(goto){
         navigator.app.loadUrl(goto, {openExternal:true})
     };
+	if( window.localStorage.getItem('support') === null ){
+		navigator.notification.alert('Show you support for this app by leaving a comment & rating. Thanks', function(){
+        	window.localStorage.setItem('support', 'true')
+		},'Support AA Finder app', 'OK');
+	}
 }])
 .controller('settingsCtrl', ['settings','$scope',function(settings, $scope){
         $scope.upDate = function(){

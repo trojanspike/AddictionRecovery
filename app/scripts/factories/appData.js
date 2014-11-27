@@ -30,7 +30,7 @@ window.angular.module('app.data', ['app.constants'])
                     self.Meetings = _Cache.container('meetings');
                     $http({
                         method : 'GET',
-                        url : apiInfo.url
+                        url : apiInfo.url+'data'
                     }).then(function(obj){
                         self.Meetings.put( JSON.stringify(obj.data) ).save(callback);
                     });
@@ -128,6 +128,25 @@ window.angular.module('app.data', ['app.constants'])
     };
 }])
 
-.factory('socket', [function(){
-	//- return io.connect('https://aa-finder-data.herokuapp.com/mobile');
+.factory('socket', ['apiInfo',function(apiInfo){
+	if(typeof io === 'function'){
+		return io.connect(apiInfo.main+'/mobile');	
+	}
+}])
+.factory('closest', ['$http', 'apiInfo', '$q', function($http, apiInfo, $q){
+	var defer = $q.defer();
+	navigator.geolocation.getCurrentPosition(function(pos){
+
+		$http.get(apiInfo.url + pos.coords.latitude +'/'+pos.coords.longitude +'/5').then(function(data){
+			defer.resolve( data.data );
+		});
+	
+	} , function(){
+		defer.resolve([]);
+	});
+	return defer.promise;
+
 }]);
+
+
+
