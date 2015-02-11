@@ -36,11 +36,11 @@ window.angular.module('app.controllers',['app.domControllers'])
     $scope.url = function(goto){
         navigator.app.loadUrl(goto, {openExternal:true})
     };
-
-	/* App Rate */
-	AppRate.preferences.storeAppURL.android = 'market://details?id=uk.co.sites_ignite.AddictionRecovery';
-	AppRate.promptForRating(true);	
-
+	if( window.localStorage.getItem('support') === null ){
+		/* App Rate */
+		AppRate.preferences.storeAppURL.android = 'market://details?id=uk.co.sites_ignite.AddictionRecovery';
+		AppRate.promptForRating(true);
+	}
 }])
 .controller('settingsCtrl', ['settings','$scope',function(settings, $scope){
         $scope.upDate = function(){
