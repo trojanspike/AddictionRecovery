@@ -36,11 +36,11 @@ window.angular.module('app.controllers',['app.domControllers'])
     $scope.url = function(goto){
         navigator.app.loadUrl(goto, {openExternal:true})
     };
-	if( window.localStorage.getItem('support') === null ){
-		navigator.notification.alert('Show you support for this app by leaving a comment & rating. Thanks', function(){
-        	window.localStorage.setItem('support', 'true')
-		},'Support AA Finder app', 'OK');
-	}
+
+	/* App Rate */
+	AppRate.preferences.storeAppURL.android = 'market://details?id=uk.co.sites_ignite.AddictionRecovery';
+	AppRate.promptForRating(true);	
+
 }])
 .controller('settingsCtrl', ['settings','$scope',function(settings, $scope){
         $scope.upDate = function(){

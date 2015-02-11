@@ -6,3 +6,4 @@ org.apache.cordova.file-transfer
 org.apache.cordova.plugin.softkeyboard
 org.apache.cordova.console
 org.apache.cordova.splashscreen
+org.pushandplay.cordova.apprate
