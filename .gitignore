@@ -16,5 +16,5 @@ platforms/*
 plugins/*
 !plugins/git.index
 
-apk/*
-!apk/git.index
+ant.properties
+engine/
