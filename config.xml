@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget 
-	id="uk.co.sites-ignite.AAfinderApp" 
-	version="2.2.0" xmlns="http://www.w3.org/ns/widgets"
-    versionCode="11"
+	id="uk.co.sites-ignite.AddictionRecovery" 
+	version="0.0.1" xmlns="http://www.w3.org/ns/widgets"
+    versionCode="1"
 	xmlns:cdv="http://cordova.apache.org/ns/1.0"
 >
     <name>AA finder</name>
@@ -34,14 +34,14 @@
     <feature name="http://api.phonegap.com/1.0/notification"/>
 
     <!-- PERFENCES : set orientation etc -->
-    <preference name="phonegap-version" value="3.5.0" />
+    <preference name="phonegap-version" value="4.0.0" />
     <preference name="orientation" value="portrait" />
     <preference name="exit-on-suspend" value="true" />
     <preference name="target-device" value="handset" />
     <preference name="fullscreen" value="false" />
 
-    <!-- <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="3000" /> -->
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="10000" />
 
     <!-- access origins : specify -->
     <access subdomains="false" origin="http://www.alcoholicsanonymous.ie/" />

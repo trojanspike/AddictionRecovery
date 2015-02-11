@@ -136,7 +136,7 @@ window.angular.module('app.data', ['app.constants'])
 .factory('closest', ['$http', 'apiInfo', '$q', function($http, apiInfo, $q){
 	var defer = $q.defer();
 	navigator.geolocation.getCurrentPosition(function(pos){
-
+		
 		$http.get(apiInfo.url + pos.coords.latitude +'/'+pos.coords.longitude +'/5').then(function(data){
 			defer.resolve( data.data );
 		});

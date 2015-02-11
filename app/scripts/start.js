@@ -1,7 +1,7 @@
 'use strict';
 var ons = window.ons;
 var isDevice = true;
-window.angular.module('aaFinder',['app.routes','onsen', 'SI.cordova', 'app.data', 'app.constants'])
+window.angular.module('AR',['app.routes','onsen', 'SI.cordova', 'app.data', 'app.constants'])
 .run(['$location','cordovaCache','appService', 'settings', 'appinfo', 'apiInfo', 'socket',
 function($location, cordovaCache, appService, settings, appinfo, apiInfo, socket){
 
@@ -15,7 +15,7 @@ ons.ready(function(){
 
 if(isDevice){
     document.addEventListener('deviceready' , function(){
-
+			navigator.splashscreen.hide()
         document.addEventListener("backbutton", function(e){
             navigator.app.backHistory();
         }, false);
@@ -24,6 +24,7 @@ if(isDevice){
             var Continue = function(){
                 appService.setCache(cache);
                 appService.setCrypt(crypt);
+					
             };
             Continue();
         });

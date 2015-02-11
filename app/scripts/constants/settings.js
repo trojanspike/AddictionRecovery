@@ -10,9 +10,9 @@ window.angular.module('app.constants',[])
 .constant('devinfo', {
     name : 'Lee Mc Kay',
     url : 'sites-ignite.co.uk',
-    email : 'aafinder@sites-ignite.co.uk'
+    email : 'AddictionRecovery@sites-ignite.co.uk'
 })
 .constant('appinfo', {
-    version : '2.2.0',
-    buildDate : '19/11/2014'
+    version : '0.1.3',
+    buildDate : '11/02/2015'
 });
