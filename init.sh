@@ -15,10 +15,6 @@ echo "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" 
 echo "============================================================================"
 }
 
-if [ ! -d "platforms/android/" ]; then
- cordova platform add android
-fi
-
 mkdir www && cordova platform add android && rm -Rf $base/engine && mkdir $base/engine && cd $base/engine && \
 wget https://download.01.org/crosswalk/releases/crosswalk/android/stable/10.39.235.15/x86/crosswalk-cordova-10.39.235.15-x86.zip \
 \
