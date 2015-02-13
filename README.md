@@ -9,7 +9,7 @@ $ ./init.sh
 PlayStore : [AddictionRecovery](https://play.google.com/store/apps/details?id=uk.co.sites_ignite.AddictionRecovery)
 
 --
-![Icon](https://raw.github.com/trojanspike/AA-finder/photos/AAicon.png =150 )
+![Icon](https://raw.github.com/trojanspike/AA-finder/photos/AAicon.png){: style="width:150px"}
 ---
 ![Home](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/home.png =250 )
 ![Information](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/information.png =250 )
