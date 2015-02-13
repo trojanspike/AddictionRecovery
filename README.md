@@ -6,15 +6,15 @@ Run at start & install plugins in the config.js
 $ ./init.sh
 ```
 
-PlayStore : [AA Finder](https://play.google.com/store/apps/details?id=uk.co.sites_ignite.AddictionRecovery)
+PlayStore : [AddictionRecovery](https://play.google.com/store/apps/details?id=uk.co.sites_ignite.AddictionRecovery)
 
 --
-![Icon](https://raw.github.com/trojanspike/AA-finder/photos/AAicon.png)
+![Icon](https://raw.github.com/trojanspike/AA-finder/photos/AAicon.png =150 )
 ---
-![Home](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/home.png , { width: 450px})
-![Information](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/information.png , { width: 450px})
-![Settings](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/settings.png, { width: 450px})
-![Time-infi-map](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/times-info-map.png, { width: 450px})
+![Home](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/home.png =250 )
+![Information](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/information.png =250 )
+![Settings](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/settings.png =250 )
+![Time-infi-map](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/times-info-map.png =250 )
 ---
 
 Plugin search url :
