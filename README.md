@@ -8,14 +8,14 @@ $ ./init.sh
 
 PlayStore : [AddictionRecovery](https://play.google.com/store/apps/details?id=uk.co.sites_ignite.AddictionRecovery)
 
---
-![Icon](https://raw.github.com/trojanspike/AA-finder/photos/AAicon.png)
----
-![Home](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/home.png)
-![Information](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/information.png)
-![Settings](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/settings.png)
-![Time-infi-map](https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/times-info-map.png)
----
+```html
+<img src="https://raw.github.com/trojanspike/AA-finder/photos/AAicon.png" alt="icon" style="width:150px;" />
+
+<img src="https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/home.png" alt="home" style="width:250px;" />
+<img src="https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/information.png" alt="Information" style="width:250px;" />
+<img src="https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/settings.png" alt="Settings" style="width:250px;" />
+<img src="https://raw.github.com/trojanspike/AA-finder/photos/screen-shots/times-info-map.png" alt="Time-infi-map" style="width:250px;" />
+```
 
 Plugin search url :
 --------------------
