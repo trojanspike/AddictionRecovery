@@ -10,12 +10,5 @@ var MeetingSchema = mongoose.Schema({
 	accessKey	:	String
 });
 
-MeetingSchema.virtual('bla').get(function(){
-	return this.town;
-});
-
-MeetingSchema.methods.bark = function(){
-	console.log( this.bla );
-};
 
 module.exports = mongoose.model('meeting', MeetingSchema);
