@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget 
+	id="uk.co.sites-ignite.AddictionRecovery" 
+	version="0.0.8" xmlns="http://www.w3.org/ns/widgets"
+    versionCode="8"
+	xmlns:cdv="http://cordova.apache.org/ns/1.0"
+>
+    <name>Addiction Recovery</name>
+
+
+    <description>
+		Find local Alcoholics Anonymous meetings.
+    </description>
+
+
+    <author
+        email="contact@sites-ignite.co.uk"
+        href="http://sites-ignite.co.uk">
+        Lee Mc Kay
+    </author>
+
+    <!-- ICONS :  -->
+<platform name="android">
+	<icon src="./AAicon.png" density="ldpi" />
+	<icon src="./AAicon.png" density="mdpi" />
+	<icon src="./AAicon.png" density="hdpi" />
+	<icon src="./AAicon.png" density="xhdpi" />
+</platform>
+
+    <!-- features -->
+    <feature name="http://api.phonegap.com/1.0/device" />
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    <feature name="http://api.phonegap.com/1.0/notification"/>
+
+    <!-- PERFENCES : set orientation etc -->
+    <preference name="phonegap-version" value="4.0.0" />
+    <preference name="orientation" value="portrait" />
+    <preference name="exit-on-suspend" value="true" />
+    <preference name="target-device" value="handset" />
+    <preference name="fullscreen" value="false" />
+
+    <!-- <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="10000" /> -->
+
+    <!-- access origins : specify -->
+    <access subdomains="false" origin="http://www.alcoholicsanonymous.ie/" />
+    <access subdomains="true" origin="https://googleapis" />
+    <access subdomains="true" origin="http://192.168.1.2" />
+
+	<access origin="*"/>
+
+    <content src="index.html" />
+</widget>

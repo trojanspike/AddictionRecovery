@@ -1,0 +1,17 @@
+<ons-page id="side-menu" ng-controller="menuCtrl">
+
+    <ons-list>
+        <div class="navigation-bar">
+            <input type="search"
+                         placeholder="town or city"
+                         class="search-input"
+                         ng-model="menuFilter"
+                >
+        </div>
+            <ons-list-item ng-repeat="town in towns | filter:menuFilter" modifier="chevron" ng-click="closeMenu()">
+                <a ng-href="#/location/{{town | lowercase}}" style="display:block"> {{town}} </a>
+            </ons-list-item>
+
+
+    </ons-list>
+</ons-page>

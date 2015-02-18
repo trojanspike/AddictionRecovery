@@ -1,0 +1,104 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Addiction Recovery</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+	 <link rel="stylesheet" href="bower_components/onsenui/build/css/onsenui.css">
+	 <link rel="stylesheet" href="bower_components/onsenui/build/css/onsen-css-components.css">
+
+    <!-- build:css(.tmp) styles/main.css -->
+
+    <link rel="stylesheet" href="styles/locationplace.css">
+    <link rel="stylesheet" href="styles/ons-list.css">
+      <link rel="stylesheet" href="styles/global.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="AR">
+
+  <ons-modal var="modal">
+      <img src="img/mainbg.png" width="35%">
+      <hr>
+      Please Wait <ons-icon icon="refresh" size="15px" spin="true"></ons-icon>
+  </ons-modal>
+
+  <!--############-->
+  <ons-sliding-menu
+          above-page="main.html"
+          behind-page="templates/sideView/menu.html"
+          side="left"
+          max-slide-distance="250px"
+          var="menu">
+  </ons-sliding-menu>
+
+  <ons-template id="main.html">
+      <ons-page>
+          <ons-toolbar ng-controller="activeController">
+              <div class="left" ng-class="{activeLink: menu.isMenuOpened() }">
+                  <a  ng-click="menu.toggleMenu()">
+                      <ons-icon icon="ion-search" style="font-size: 32px; width: 1em;"></ons-icon>
+                  </a>
+              </div>
+              <div class="center" ng-class="{activeLink: $route.current.activetab == '/welcome'}">
+                  <a href="#/welcome">
+                      AA Finder
+                  </a>
+              </div>
+              <div class="right" ng-class="{activeLink: $route.current.activetab == '/'}">
+                  <a href="#/">
+                      <ons-icon icon="ion-home"></ons-icon>
+                  </a>
+              </div>
+          </ons-toolbar>
+
+            <ng-view></ng-view>
+
+          <ons-bottom-toolbar ng-controller="activeController">
+              <ons-row>
+                  <ons-col>
+                      <app-exit></app-exit>
+                  </ons-col>
+                  <ons-col ng-class="{activeLink: $route.current.activetab == '/info'}">
+                      <a href="#/info">Info</a>
+                  </ons-col>
+                  <ons-col ng-class="{activeLink: $route.current.activetab == '/settings'}">
+                      <a href="#/settings">Settings</a>
+                  </ons-col>
+              </ons-row>
+          </ons-bottom-toolbar>
+
+      </ons-page>
+  </ons-template>
+
+  <!--############-->
+	<!-- <script src="https://aa-finder-data.herokuapp.com/socket.io/socket.io.js"></script> -->
+	<script src="http://aa-finder.sites-ignite.co.uk/socket.io/socket.io.js"></script>
+	<script src="cordova.js"></script>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/onsenui/build/js/onsenui.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/cordovaCache/dist/crypto-aes.js"></script>
+    <script src="bower_components/cordovaCache/dist/cordovaCache.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({app,.tmp}) scripts/App.js -->
+			<script type="text/javascript" src="scripts/start.js"></script>
+        	<script type="text/javascript" src="scripts/routes.js"></script>
+			<script type="text/javascript" src="scripts/constants/settings.js"></script>
+			<script type="text/javascript" src="scripts/factories/appData.js"></script>
+
+            <script type="text/javascript" src="scripts/controllers/domControllers.js"></script>
+			<script type="text/javascript" src="scripts/controllers/routeControllers.js"></script>
+
+        <!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,74 @@
+<div id="info">
+    <header>
+        <h4>Information</h4>
+    </header>
+
+    <section>
+
+        <ons-list modifier="inset" class="settings-list">
+            <ons-list-header><ons-icon icon="fa-info"></ons-icon> AA resourses</ons-list-header>
+            <ons-list-item modifier="chevron">
+                <a ng-click="url('http://www.alcoholicsanonymous.ie')">AA website: alcoholicsanonymous.ie</a>
+            </ons-list-item>
+            <ons-list-item modifier="chevron">
+                <a ng-click="url('http://www.communityni.org/')">PIPs NI community</a>
+            </ons-list-item>
+            <ons-list-item>
+                Drinkline : 0800 917 8282
+            </ons-list-item>
+            <ons-list-item>
+                Mind Info Line : 0845 766 0163
+            </ons-list-item>
+            <ons-list-item>
+                Lifeline : 0808 808 8000
+            </ons-list-item>
+        </ons-list>
+
+        <ons-list modifier="inset" class="settings-list">
+            <ons-list-header><ons-icon icon="fa-info"></ons-icon> AA Meeting Legent</ons-list-header>
+            <ons-list-item>
+                Open (O) AA Meetings are open to ALL who may or may not have an alcoholic problem.
+            </ons-list-item>
+            <ons-list-item>
+                Step (S), Tradition (T) and Big Book (BB), these meetings are Closed AA Meetings.
+            </ons-list-item>
+        </ons-list>
+
+        <ons-list modifier="inset" class="settings-list">
+            <ons-list-header><ons-icon icon="fa-info"></ons-icon> App info</ons-list-header>
+            <ons-list-item>
+                App Version : <span class="pull-right">{{ data.appVersion }}</span>
+            </ons-list-item>
+            <ons-list-item>
+                App build Date : <span class="pull-right">{{ data.appBuild }}</span>
+            </ons-list-item>
+        </ons-list>
+
+        <ons-list modifier="inset" class="settings-list">
+            <ons-list-header><ons-icon icon="fa-info"></ons-icon> Developer info</ons-list-header>
+            <ons-list-item>
+                Name : {{ data.devName }}
+            </ons-list-item>
+            <ons-list-item>
+                Email : {{ data.devEmail }}
+            </ons-list-item>
+            <ons-list-item>
+                Wesite : {{ data.devSite }}
+            </ons-list-item>
+        </ons-list>
+
+
+
+        <ons-list modifier="inset" class="settings-list" style="display:none;">
+            <ons-list-item modifier="chevron">
+                Terms of Use
+            </ons-list-item>
+
+            <ons-list-item modifier="chevron">
+                Privacy Policy
+            </ons-list-item>
+        </ons-list>
+
+    </section>
+
+</div>
