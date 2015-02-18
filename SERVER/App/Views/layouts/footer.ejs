@@ -1,0 +1,15 @@
+
+
+</body>
+<script>
+var socket = io.connect('<%= base() %>/web');
+socket.on('WebCount', function(data){
+	document.getElementById('WebCount').innerText = data ;
+});
+
+socket.on('MobCount', function(data){
+	document.getElementById('MobCount').innerText = data ;
+});
+
+</script>
+</html>

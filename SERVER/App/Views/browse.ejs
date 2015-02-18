@@ -1,0 +1,22 @@
+<% include layouts/header %>
+
+AA Finder :: <span id="WebCount"></span> / <span id="MobCount"></span>
+<hr/>
+<%= env %>
+<hr/>
+<%= host %>
+
+<script>
+navigator.geolocation.getCurrentPosition(
+function(pos){ 
+	console.log(pos);
+	console.log( '/api/v1/data/'+pos.coords.latatude+'/'+pos.coords.longitude+'/5' );
+	$.getJSON('/api/v1/data/'+pos.coords.latitude+'/'+pos.coords.longitude+'/5').then(function(data){
+		console.log(data)
+	});
+},
+function(){});
+</script>
+
+
+<% include layouts/footer %>
