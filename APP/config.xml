@@ -21,10 +21,10 @@
 
     <!-- ICONS :  -->
 <platform name="android">
-	<icon src="./AAicon.png" density="ldpi" />
-	<icon src="./AAicon.png" density="mdpi" />
-	<icon src="./AAicon.png" density="hdpi" />
-	<icon src="./AAicon.png" density="xhdpi" />
+	<icon src="./ARicon.png" density="ldpi" />
+	<icon src="./ARicon.png" density="mdpi" />
+	<icon src="./ARicon.png" density="hdpi" />
+	<icon src="./ARicon.png" density="xhdpi" />
 </platform>
 
     <!-- features -->
