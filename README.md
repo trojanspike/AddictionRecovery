@@ -1,6 +1,8 @@
 ## Addiction Recovery
 #### Users can fork / edit, contribute and see how it works with cordova
 
+[![Join the chat at https://gitter.im/trojanspike/AddictionRecovery](https://badges.gitter.im/trojanspike/AddictionRecovery.svg)](https://gitter.im/trojanspike/AddictionRecovery?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Run at start & install plugins in the config.js
 ```bash
 $ ./init.sh
